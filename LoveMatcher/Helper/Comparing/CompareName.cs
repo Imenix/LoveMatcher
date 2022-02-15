@@ -18,7 +18,7 @@ namespace LoveMatcher.Helper.Comparing
         /// <returns></returns>
         public bool LenghtIsEven()
         {
-            return 0;
+            return true;
         }
 
         //skillnad i mängd vokaler        
