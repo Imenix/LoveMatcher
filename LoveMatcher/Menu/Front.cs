@@ -1,7 +1,6 @@
-
 public class Front
 {
-	public static void MainMenuText()
+	public void MainMenuText()
     {
         Box.Simple(new string[]
            {"Choose an option",
