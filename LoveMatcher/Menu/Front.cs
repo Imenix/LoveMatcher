@@ -1,5 +1,3 @@
-using Helper.Graphic.Boxbuilder;
-using System;
 public class Front
 {
 	public void MainMenuText()

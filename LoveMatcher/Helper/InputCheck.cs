@@ -16,7 +16,7 @@ public class InputCheck
     /// <returns></returns>
     public bool CheckDateTimeFormat() //https://stackoverflow.com/questions/371987/how-to-validate-a-datetime-in-c
     {
-        DateTime temp; 
+        DateTime temp;
         if (DateTime.TryParse(startDateTextBox.Text, out temp))
         {
             // Yay :)
@@ -31,8 +31,8 @@ public class InputCheck
     /// Controls that the input is letters or '-'.
     /// </summary>
     /// <returns></returns>
-    public bool CheckLetters()  //https://stackoverflow.com/questions/1181419/verifying-that-a-string-contains-only-letters-in-c-sharp/1181426
+    public bool CheckLetters(string input)  //https://stackoverflow.com/questions/1181419/verifying-that-a-string-contains-only-letters-in-c-sharp/1181426
     {
-       bool result = input.All(Char.IsLetter || '-');
+       bool result = input.All(Char.IsLetter);
     }
 }
