@@ -1,5 +1,3 @@
-using System
-using Menu.Front
 public class Back
 {
     public void MainMenu()
