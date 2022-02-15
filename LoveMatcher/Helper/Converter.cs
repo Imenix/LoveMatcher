@@ -5,7 +5,7 @@ public class Convert
     /// <returns> int[].</returns>
     public int[] CharToInt(string name) //TESTA
     {
-        var numbers[] = new int[name.Length];
+        var numbers = new int[name.Length];
         for (int i = 0; i < name.Length; i++)
         {
             int number = (int)Char.GetNumericValue(name[i]);
@@ -21,8 +21,8 @@ public class Convert
     private static string NameCheck(string name)
     {
         name = name.Trim();
-        var firstLetter = namn.Substring(0, 1).ToUpper();
-        var rest = namn.Substring(1).ToLower();
+        var firstLetter = name.Substring(0, 1).ToUpper();
+        var rest = name.Substring(1).ToLower();
         return firstLetter + rest;
     }
 }
