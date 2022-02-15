@@ -13,4 +13,16 @@ public class Convert
         }
         return numbers;
     }
+    /// <summary>
+    /// Makes the first letter a capital letter and rest to lower case. Takes away unnecessary spaces
+    /// </summary>
+    /// <param name="namn">The name.</param>
+    /// <returns></returns>
+    private static string NameCheck(string name)
+    {
+        name = name.Trim();
+        var firstLetter = namn.Substring(0, 1).ToUpper();
+        var rest = namn.Substring(1).ToLower();
+        return firstLetter + rest;
+    }
 }

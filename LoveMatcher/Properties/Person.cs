@@ -11,7 +11,18 @@ public class Person
     public DateTime Birthday { get; set; }
     /// <summary> Persons age </summary>
     /// <value> The age. </value>
-    public int Age { get; set; }
+    public int Age
+    {
+        get
+        {
+            return age;
+        }
+        set
+        {
+            age = DateTime.Now.Year - Birthday.Year ;
+        }
+    }
+    private int age;
     /// <summary> Persons gender </summary>
     /// <value> The gender </value>
     public string Gender { get; set; }

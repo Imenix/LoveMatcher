@@ -1,7 +1,8 @@
 using System
+using Menu.Front
 public class Back
 {
-    public void BackEndMenu();
+    public void MainMenu();
     {
         var choice = Console.ReadKey();
         switch(choice.Key)
@@ -12,5 +13,5 @@ public class Back
         case ConsoleKey.D2:
         break;
         }
-    } 
+    }
 }
