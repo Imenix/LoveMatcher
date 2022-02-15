@@ -2,7 +2,7 @@ using System
 using Menu.Front
 public class Back
 {
-    public void MainMenu();
+    public void MainMenu()
     {
         var choice = Console.ReadKey();
         switch(choice.Key)

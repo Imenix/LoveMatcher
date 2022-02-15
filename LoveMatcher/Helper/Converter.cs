@@ -21,8 +21,8 @@ public class Convert
     private static string NameCheck(string name)
     {
         name = name.Trim();
-        var firstLetter = namn.Substring(0, 1).ToUpper();
-        var rest = namn.Substring(1).ToLower();
+        var firstLetter = name.Substring(0, 1).ToUpper();
+        var rest = name.Substring(1).ToLower();
         return firstLetter + rest;
     }
 }
