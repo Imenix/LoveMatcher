@@ -31,8 +31,8 @@ namespace LoveMatcher.Helper.Comparing
         /// <returns>The amount of vowels.</returns>
         public int NumberOfVowels(string name)
         {
-            var vowels = new char[] { 'a', 'e', 'i', 'o', 'u' };
-            int vowelSum = name.Count(c => vowels.Contains(c));
+            var vowels = new char[] { 'a', 'e', 'i', 'o', 'u','å','ä','ö' };
+            int vowelSum = name.ToLower().Count(c => vowels.Contains(c));
             return vowelSum;
         }
 
@@ -44,7 +44,7 @@ namespace LoveMatcher.Helper.Comparing
         public int NumberOfConsonants(string name)
         {
             var consonants = new char[] { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'};
-            int consonantSum = name.Count(c => consonants.Contains(c));
+            int consonantSum = name.ToLower().Count(c => consonants.Contains(c));
             return consonantSum;
         }
 
