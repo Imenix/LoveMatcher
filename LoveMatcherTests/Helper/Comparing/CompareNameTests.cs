@@ -14,13 +14,18 @@ namespace LoveMatcher.Helper.Comparing.Tests
         [TestMethod()]
         public void LengthTest()
         {
-            Assert.Fail();
+            CompareName n = new();
+            var result = n.LengthName("Joe");
+            Assert.AreEqual(3,result);
         }
 
         [TestMethod()]
-        public void LengthIsEvenTest()
+        [DataRow("Joel")]
+        public void LengthIsEvenTest(string name)
         {
-            Assert.Fail();
+            CompareName c = new();
+            var actual = c.LengthIsEven(name);
+            Assert.IsTrue(actual);
         }
 
         [TestMethod()]
