@@ -6,22 +6,25 @@ namespace LoveMatcher.Helper.Comparing
         /// <summary>
         /// Calculates the difference between lenght of the names
         /// </summary>
-        public int Length()
+        public int Length(string name)
         {
-            return 0;
+            var nameLength = name.Length;
+            return nameLength;
         }
 
-        //är längderna udda eller jämna        
+        //är längderna udda eller jämna
         /// <summary>
         /// Checks if lenght of the name is even or not
         /// </summary>
         /// <returns></returns>
-        public bool LenghtIsEven()
+        public object LengthIsEven(string name)
         {
-            return true;
+            var nameLength = name.Length;
+            if (nameLength % 2 == 0) return true;
+            else return false;
         }
 
-        //skillnad i mängd vokaler        
+        //skillnad i mängd vokaler
         /// <summary>
         /// Checks the number of vowels in the name.
         /// </summary>
@@ -33,7 +36,7 @@ namespace LoveMatcher.Helper.Comparing
             return vowelSum;
         }
 
-        //skillnad i mängd konsonanter        
+        //skillnad i mängd konsonanter
         /// <summary>
         /// Checks the number of consonants in the name.
         /// </summary>
@@ -45,9 +48,9 @@ namespace LoveMatcher.Helper.Comparing
             return consonantSum;
         }
 
-        //Skillnad i mängd dubbla bokstäver        
+        //Skillnad i mängd dubbla bokstäver
         /// <summary>
-        /// Checks how many same letters the names have. 
+        /// Checks how many same letters the names have.
         /// </summary>
         /// <returns></returns>
         public int NumberOfSameLetters()

@@ -24,7 +24,7 @@ public class CompareAge
         return age > 17;
     }
 
-    //jämna eller ojämna nummer    
+    //jämna eller ojämna nummer
     /// <summary>
     /// Determines whether the age is even or odd number.
     /// </summary>

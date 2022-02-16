@@ -12,7 +12,31 @@ namespace LoveMatcher.Helper.Comparing.Tests
     public class CompareNameTests
     {
         [TestMethod()]
-        public void NumberOfVowelsTest()
+        public void LengthTest()
+        {
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void LengthIsEvenTest()
+        {
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void NumberOfVocalsTest()
+        {
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void NumberOfConsonantsTest()
+        {
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void NumberOfSameLettersTest()
         {
             Assert.Fail();
         }
