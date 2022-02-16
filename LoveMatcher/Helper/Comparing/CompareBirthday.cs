@@ -5,13 +5,12 @@
 //vilket stjärntecken/element
 public class CompareBirthday
 {
-    int[] evenDays = new int[] { 2, 4, 6, 8, 10, 12 };
-    public static int CompareMonth(DateTime date1, DateTime date2)
+    public int CompareMonth(DateTime date1, DateTime date2)
     {
         if (date1.Month < date2.Month) return date2.Month - date1.Month;
         else return date1.Month - date2.Month;
     }
-    public static int CompareDay(DateTime date1, DateTime date2)
+    public int CompareDay(DateTime date1, DateTime date2)
     {
         if (date1.Day < date2.Day) return date2.Day - date1.Day;
         else return date1.Day - date2.Day;
