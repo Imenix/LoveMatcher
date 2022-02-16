@@ -6,7 +6,7 @@ public class Front
            {"Choose an option",
             "[1]  Start comparing",
             "[2]  Exit",
-           });     
+           });
     }
 
     public void CompareMenu()
