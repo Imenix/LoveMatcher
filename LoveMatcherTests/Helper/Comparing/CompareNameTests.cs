@@ -12,7 +12,7 @@ namespace LoveMatcher.Helper.Comparing.Tests
     public class CompareNameTests
     {
         [TestMethod()]
-        public void LengthTest()
+        public void LengthTest_Name_Fail()
         {
             CompareName n = new();
             var result = n.LengthName("Joe");
