@@ -26,21 +26,26 @@ namespace LoveMatcher.Helper.Comparing
 
         //skillnad i mängd vokaler
         /// <summary>
-        /// Checks the number of vocals in the name.
+        /// Checks the number of vowels in the name.
         /// </summary>
-        /// <returns></returns>
-        public int NumberOfVocals()
+        /// <returns>The amount of vowels.</returns>
+        public int NumberOfVowels(string name)
         {
-            return 0;
+            var vowels = new char[] { 'a', 'e', 'i', 'o', 'u','å','ä','ö' };
+            int vowelSum = name.ToLower().Count(c => vowels.Contains(c));
+            return vowelSum;
         }
 
         //skillnad i mängd konsonanter
         /// <summary>
         /// Checks the number of consonants in the name.
         /// </summary>
-        public int NumberOfConsonants()
+        /// <returns>The amount of consonants.</returns>
+        public int NumberOfConsonants(string name)
         {
-            return 0;
+            var consonants = new char[] { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'};
+            int consonantSum = name.ToLower().Count(c => consonants.Contains(c));
+            return consonantSum;
         }
 
         //Skillnad i mängd dubbla bokstäver
