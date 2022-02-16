@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0006: Metadata file 'C:\Users\Tiia Tupamäki\Source\Repos\LoveMatcher\LoveMatcher\bin\Debug\net6.0\ref\LoveMatcher.dll' could not be found
+dotnet_diagnostic.CS0006.severity = warning

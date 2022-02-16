@@ -11,27 +11,60 @@ namespace Tests
     public class CompareAgeTests
     {
         [TestMethod()]
-        public void AgeDifferenceTest()
+        [DataRow(30,26)]
+        [DataRow(45, 35)]
+        public void AgeDifferenceTest_FirstIsHigherThanSecond(int age1, int age2)
         {
-            //arrange
-            
-            //act
-            
+            CompareAge actual = new();
+            actual.AgeDifference(age1, age2);
 
-            //asser
-            Assert.Fail();
+            var expected = age1 - age2;
+
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod()]
-        public void IsOver17Test()
+        [DataRow(18)]
+        [DataRow(99)]
+        public void IstOver17Test(int age)
         {
-            Assert.Fail();
+            CompareAge compare = new();
+            var actual = compare.IsOver17(age);
+
+            Assert.IsTrue(actual);
         }
 
         [TestMethod()]
-        public void AgeIsEvenNumberTest()
+        [DataRow(17)]
+        [DataRow(1)]
+        public void IsNotOver17Test(int age)
         {
-            Assert.Fail();
+            CompareAge compare = new();
+            var actual = compare.IsOver17(age);
+
+            Assert.IsFalse(actual);
+        }
+
+        [TestMethod()]
+        [DataRow(68)]
+        [DataRow(18)]
+        public void AgeIsEvenNumberTest(int age)
+        {
+            CompareAge compare = new();
+            var actual = compare.AgeIsEvenNumber(age);
+
+            Assert.IsTrue(actual);
+        }
+
+        [TestMethod()]
+        [DataRow(99)]
+        [DataRow(5)]
+        public void AgeIsNotEvenNumberTest(int age)
+        {
+            CompareAge compare = new();
+            var actual = compare.AgeIsEvenNumber(age);
+
+            Assert.IsFalse(actual);
         }
     }
 }
