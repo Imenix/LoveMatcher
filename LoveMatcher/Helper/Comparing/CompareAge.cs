@@ -9,7 +9,7 @@ public class CompareAge
     /// <returns></returns>
     public int AgeDifference(int age1, int age2)
     {
-        return age1 < age2 ? age1 - age2 : age2 - age1;
+        return age1 < age2 ? age2 - age1 :age1 - age2;
     }
 
     /// <summary>
