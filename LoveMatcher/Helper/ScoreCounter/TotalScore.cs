@@ -6,8 +6,19 @@ using System.Threading.Tasks;
 
 namespace LoveMatcher.Helper.ScoreCounter
 {
-    internal class TotalScore
+    public class TotalScore
     {
         //lagrar totala poäng
+        public int Score(int score)
+        {
+            int total;
+            total+= score;
+            return total;
+        }
+
+        public int AddScore(int score)
+        {
+            Score(score);
+        }
     }
 }
