@@ -12,13 +12,27 @@ public static class MenuGraphics
     /// <param name="age2">Age2.</param>
     public static void CompareMenuGraphics(string name1 = "", string age1 = "", string name2 = "", string age2 = "")
     {
-        Draw(Assets.InputBox(name1,age1), 0, 1);
+        Draw(Assets.InputBox(name1, age1), 0, 1);
         Draw(Assets.Heart, 37, 0);
         Draw(Assets.InputBox(name2, age2), 51, 1);
         CursorStartPos(name1, age1, name2, age2);
         InputCheck.CheckCursorPosition();
     }
-
+    public static void Pulse()
+    {
+        int speed = 100;
+        while (true)
+        {
+            Draw(Assets.Heart3, 37, 0);
+            Thread.Sleep(speed);
+            Draw(Assets.Heart2, 37, 0);
+            Thread.Sleep(speed);
+            Draw(Assets.Heart, 37, 0);
+            Thread.Sleep(speed);
+            Draw(Assets.Heart2, 37, 0);
+            Thread.Sleep(speed);
+        }
+    }
     private static void Draw(string[] subject, int leftPos, int topPos)
     {
         for (int i = 0; i < subject.Length; i++)
@@ -40,19 +54,47 @@ public static class MenuGraphics
     private static void FillBar(int result, int BarLength, int left = 0, int top = 0)
     {
         int speed = 1;
-        Console.SetCursorPosition(left + 1, top + 1); //so the filled bar begins inside the bar
+        int heart = 1;
+        (int l, int t) pos =(left+1,top+1);
+        Console.SetCursorPosition(pos.l,pos.t); //so the filled bar begins inside the bar     
 
         Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), "Red");
         for (int i = 0; i < BarLength; i++)
         {
             if (result / 2 > i) //While barLength is 50 and highest score is 100 the result has to be halved to be accurate
             {
+                Console.SetCursorPosition(pos.l, pos.t);
+
                 Thread.Sleep(speed);
-                speed += i;
+                speed += 6;
                 Console.Write("█");
+                pos = Console.GetCursorPosition();
+
+                if (heart == 1)
+                {
+                    Draw(Assets.Heart, 37, 0);
+                    heart = 2;
+                }
+                else if (heart == 2)
+                {
+                    Draw(Assets.Heart2, 37, 0);
+                    heart = 3;
+                }
+                else if (heart == 3)
+                {
+                    Draw(Assets.Heart3, 37, 0);
+                    heart = 4;
+                }
+                else if (heart == 4)
+                {
+                    Draw(Assets.Heart2, 37, 0);
+                    heart = 1;
+                }
             }
+
         }
         Console.ResetColor();
+
     }
     /// <summary>
     /// Draw an empty progress bar.

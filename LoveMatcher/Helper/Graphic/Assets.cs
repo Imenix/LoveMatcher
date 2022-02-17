@@ -11,7 +11,42 @@
             "   ▀▄▀█▀▄▀",
             "     ▀▄▀"
         };
-
+        internal static string[] Heart2 = new string[]
+        {
+            " ▄▀▀▀▄ ▄▀▀▀▄",
+            "█  ▄▄ ▀ ▄▄  █",
+            "█  ███▄███  █",
+            " ▀▄ ▀███▀ ▄▀",
+            "   ▀▄ ▀ ▄▀",
+            "     ▀▄▀"
+        };
+        internal static string[] Heart3 = new string[]
+{
+            " ▄▀▀▀▄ ▄▀▀▀▄",
+            "█     ▀     █",
+            "█   █▄ ▄█   █",
+            " ▀▄  ▀█▀  ▄▀",
+            "   ▀▄   ▄▀",
+            "     ▀▄▀"
+};
+        internal static string[] Heart4 = new string[]
+{
+            " ▄▀▀▀▄ ▄▀▀▀▄",
+            "█     ▀     █",
+            "█    ▄ ▄    █",
+            " ▀▄   ▀   ▄▀",
+            "   ▀▄   ▄▀",
+            "     ▀▄▀"
+};
+        internal static string[] Heart5 = new string[]
+{
+            " ▄███▄ ▄███▄",
+            "█████████████",
+            "█████████████",
+            " ▀█████████▀",
+            "   ▀█████▀",
+            "     ▀█▀"
+};
         internal static string[] InputBox(string name, string age)
         {
             return new string[]
