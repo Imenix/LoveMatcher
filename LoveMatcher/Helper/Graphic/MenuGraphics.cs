@@ -1,6 +1,6 @@
 ﻿
 using LoveMatcher.Helper.Graphic;
-
+//inte kommenterat jättebra än och allt e ganska stökigt, oopsies. fixar det sen /Max
 public static class MenuGraphics
 {
     /// <summary>
@@ -19,7 +19,7 @@ public static class MenuGraphics
         InputCheck.CheckCursorPosition();
     }
 
-    public static void Draw(string[] subject, int leftPos, int topPos)
+    private static void Draw(string[] subject, int leftPos, int topPos)
     {
         for (int i = 0; i < subject.Length; i++)
         {
@@ -100,6 +100,4 @@ public static class MenuGraphics
         else if (n2?.Length == 0) Console.SetCursorPosition(58, 2);
         else if (a2?.Length == 0) Console.SetCursorPosition(67, 3);
     }
-
-    
 }

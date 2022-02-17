@@ -29,7 +29,7 @@
         /// <param name="text">The text.</param>
         /// <param name="length">The length.</param>
         /// <returns>Returns a string consisting of the number of " " needed to reach the length given.</returns>
-        private static string SpaceAdjusted(string text, int length) //For helping with boxbuilding
+        private static string SpaceAdjusted(string text, int length)
         {
             int amount = length - text.Length;
             string spaces = "";
