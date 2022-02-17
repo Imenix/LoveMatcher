@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoveMatcher.Helper.PointCounter
+namespace LoveMatcher.Helper.ScoreCounter
 {
-    internal class Points
+    internal class TotalScore
     {
         //lagrar totala poäng
     }
