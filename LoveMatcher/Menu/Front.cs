@@ -1,7 +1,6 @@
-
-public class Front
+public static class Front
 {
-	public static void MainMenuText()
+    public static void MainMenuText()
     {
         Box.Simple(new string[]
            {"Choose an option",
@@ -10,12 +9,16 @@ public class Front
            });
     }
 
-    public void CompareMenu()
+    public static void CompareMenuText_StageOne()
     {
+        Box.Simple(new string[]
+        {"Write the first names and ages of the ones you want to compare"
+        });
+    }
 
     }
 
-    public void ResultMenu()
+    public static void ResultMenu()
     {
 
     }
