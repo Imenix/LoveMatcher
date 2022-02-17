@@ -6,6 +6,7 @@ public class Back
         switch(choice.Key)
         {
         case ConsoleKey.D1:
+                Front.CompareMenuFront();
         break;
 
         case ConsoleKey.D2:
