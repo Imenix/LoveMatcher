@@ -8,17 +8,16 @@ namespace LoveMatcher.Helper.ScoreCounter
 {
     public class TotalScore
     {
-        //lagrar totala poäng
-        public int Score(int score)
-        {
-            int total;
-            total+= score;
-            return total;
-        }
-
-        public int AddScore(int score)
-        {
-            Score(score);
+        private int Total;
+        //lagrar totala poäng        
+        /// <summary>
+        /// Calculates the total score.
+        /// </summary>
+        /// <param name="score">The score.</param>
+        /// <returns></returns>
+        public int AddToTotal(int score)
+        {          
+            return Total += score;
         }
     }
 }
