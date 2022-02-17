@@ -17,8 +17,19 @@ namespace Tests
             var test = new CompareBirthday();
             var date = new DateTime(1995, 2, 13);
             var date2 = new DateTime(1995, 6, 29);
-            int expected = 5;
-            var result = test.CompareDay(date, date2);
+            int expected = 4;
+            var result = test.CompareMonth(date, date2);
+
+            Assert.AreEqual(expected, result);
+        }
+        [TestMethod()]
+        public void CompareMonthTest2()
+        {
+            var test = new CompareBirthday();
+            var date = new DateTime(1995, 2, 13);
+            var date2 = new DateTime(1995, 6, 29);
+            int expected = 4;
+            var result = test.CompareMonth(date2, date);
 
             Assert.AreEqual(expected, result);
         }
@@ -26,25 +37,58 @@ namespace Tests
         [TestMethod()]
         public void CompareDayTest()
         {
-            Assert.Fail();
+            var test = new CompareBirthday();
+            var date = new DateTime(1995, 2, 13);
+            var date2 = new DateTime(1995, 6, 29);
+            int expected = 16;
+            var result = test.CompareDay(date, date2);
+
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod()]
+        public void CompareDayTest2()
+        {
+            var test = new CompareBirthday();
+            var date = new DateTime(1995, 2, 13);
+            var date2 = new DateTime(1995, 6, 29);
+            int expected = 16;
+            var result = test.CompareDay(date2, date);
+
+            Assert.AreEqual(expected, result);
         }
 
         [TestMethod()]
         public void MonthEvenNumberTest()
         {
-            Assert.Fail();
+            var test = new CompareBirthday();
+            var date = new DateTime(1995, 2, 13);
+
+            var result = test.MonthEvenNumber(date);
+
+            Assert.IsTrue(result);
         }
 
         [TestMethod()]
         public void DayEvenNumberTest()
         {
-            Assert.Fail();
+            var test = new CompareBirthday();
+            var date = new DateTime(1995, 2, 13);
+
+            var result = test.DayEvenNumber(date);
+
+            Assert.IsFalse(result);
         }
 
         [TestMethod()]
         public void ZodiacSignTest()
         {
-            Assert.Fail();
+            var test = new CompareBirthday();
+            var date = new DateTime(1995, 2, 13);
+            var expected = "Aquarius";
+            var result = test.ZodiacSign(date);
+
+            Assert.AreEqual(expected, result);
         }
     }
 }

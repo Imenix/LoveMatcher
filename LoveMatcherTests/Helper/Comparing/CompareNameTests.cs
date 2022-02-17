@@ -12,15 +12,20 @@ namespace LoveMatcher.Helper.Comparing.Tests
     public class CompareNameTests
     {
         [TestMethod()]
-        public void LengthTest()
+        public void LengthTest_Name_Fail()
         {
-            Assert.Fail();
+            CompareName n = new();
+            var result = n.LengthName("Joe");
+            Assert.AreEqual(3,result);
         }
 
         [TestMethod()]
-        public void LengthIsEvenTest()
+        [DataRow("Joel")]
+        public void LengthIsEvenTest(string name)
         {
-            Assert.Fail();
+            CompareName c = new();
+            var actual = c.LengthIsEven(name);
+            Assert.IsTrue(actual);
         }
 
         [TestMethod()]
