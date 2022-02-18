@@ -17,10 +17,10 @@ public static class Front
         MenuGraphics.CompareMenuGraphics();
     }
 
-    }
+
 
     public static void ResultMenu()
     {
-
+            return;
     }
 }

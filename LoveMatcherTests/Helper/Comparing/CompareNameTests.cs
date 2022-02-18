@@ -30,7 +30,7 @@ namespace LoveMatcher.Helper.Comparing.Tests
         /// Lengthes the is even test.
         /// </summary>
         /// <param name="name">The name.</param>
-/        [TestMethod()]
+        [TestMethod()]
         [DataRow("Joel")]
         [DataRow("JonasTheBuilders")]
         public void LengthIsEvenTest(string name)

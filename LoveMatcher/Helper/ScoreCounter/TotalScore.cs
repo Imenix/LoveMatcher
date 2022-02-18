@@ -19,7 +19,7 @@ namespace LoveMatcher.Helper.ScoreCounter
             this.Total = score < 0 ? 0 : score;
         }
 
-        //lagrar totala poäng        
+        //lagrar totala poäng
         /// <summary>
         /// Adds to the total score.
         /// </summary>
