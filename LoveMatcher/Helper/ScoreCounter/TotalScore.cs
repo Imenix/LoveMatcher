@@ -10,16 +10,7 @@ namespace LoveMatcher.Helper.ScoreCounter
     {
         private int Total;
 
-        /// <summary>
-        /// Controls that the score doesn't go below zero.
-        /// </summary>
-        /// <param name="score">The score.</param>
-        public TotalScore(int score)
-        {
-            this.Total = score < 0 ? 0 : score;
-        }
-
-        //lagrar totala poäng
+        //lagrar totala poäng        
         /// <summary>
         /// Adds to the total score.
         /// </summary>
@@ -37,7 +28,8 @@ namespace LoveMatcher.Helper.ScoreCounter
         /// <returns></returns>
         public int SubstractFromTotal(int score)
         {
-            return Total -= score;
+            Total -= score;
+            return Total < 0 ? Total = 0 : Total;
         }
     }
 }
