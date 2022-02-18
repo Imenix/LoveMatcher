@@ -1,5 +1,4 @@
-﻿namespace LoveMatcher.Helper.Graphic
-{
+﻿
     internal static class Assets
     {
         internal static string[] Heart = new string[]
@@ -38,15 +37,6 @@
             "   ▀▄   ▄▀",
             "     ▀▄▀"
 };
-        internal static string[] Heart5 = new string[]
-{
-            " ▄███▄ ▄███▄",
-            "█████████████",
-            "█████████████",
-            " ▀█████████▀",
-            "   ▀█████▀",
-            "     ▀█▀"
-};
         internal static string[] InputBox(string name, string age)
         {
             return new string[]
@@ -75,4 +65,3 @@
             return spaces;
         }
     }
-}
