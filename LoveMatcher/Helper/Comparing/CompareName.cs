@@ -53,9 +53,21 @@ namespace LoveMatcher.Helper.Comparing
         /// Checks how many same letters the names have.
         /// </summary>
         /// <returns></returns>
-        public int NumberOfSameLetters()
+        public int NumberOfSameLetters(string nameA, string nameB)
         {
-            return 0;
+            var point = 0;
+
+            char[] charArray = nameA.ToCharArray();
+            for (int i = 0; i < charArray.Length; i++)
+            {
+                bool check = nameB.Contains(charArray[i]);
+                if (check)
+                {
+                    point++;
+                }
+            }
+            //Contains
+            return point;
         }
     }
 }
