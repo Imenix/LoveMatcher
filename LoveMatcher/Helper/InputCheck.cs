@@ -34,7 +34,7 @@ public static class InputCheck
     //public bool CheckLetters(string input)  //https://stackoverflow.com/questions/1181419/verifying-that-a-string-contains-only-letters-in-c-sharp/1181426
     //{
     //   bool result = input.All(Char.IsLetter);
-    //}
+    //} 
     public static void CheckCursorPosition() //https://stackoverflow.com/q/6723755  funkar nästan felfritt. ska nog kolla igenom den mer noga sen.
     {
         string str = string.Empty;

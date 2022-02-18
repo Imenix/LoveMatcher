@@ -2,18 +2,19 @@ public static class Front
 {
     public static void MainMenuText()
     {
-        Box.Simple(new string[]
+        Box.ThinBorder(new string[]
            {"Choose an option",
             "[1]  Start comparing",
             "[2]  Exit",
            });
     }
 
-    public static void CompareMenuText_StageOne()
+    public static void CompareMenuFront()
     {
-        Box.Simple(new string[]
+        Box.ThinBorder(new string[]
         {"Write the first names and ages of the ones you want to compare"
         });
+        MenuGraphics.CompareMenuGraphics();
     }
 
     }

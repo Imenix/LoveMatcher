@@ -1,7 +1,7 @@
 ﻿using System;
 static class Box
 {
-    public static void Simple(string[] rows)
+    public static void ThinBorder(string[] rows)
     {
         string longestRow = rows.OrderByDescending(s => s.Length).First();
 
