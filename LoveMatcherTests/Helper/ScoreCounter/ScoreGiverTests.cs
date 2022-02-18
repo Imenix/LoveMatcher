@@ -18,15 +18,18 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         }
 
         [TestMethod()]
-        public void IsOver17_ScoreTest(Person person1, Person person2)
+        public void IsOver17_ScoreTest()
         {
+            Person person1 = new();
             person1.Age = 18;
+
+            Person person2 = new();
             person2.Age = 22;
 
             ScoreGiver test = new();
             var actual = test.IsOver17_Score(person1, person2);
 
-            var expected = 0;
+            var expected = 10;
 
             Assert.AreEqual(expected, actual);
         }
