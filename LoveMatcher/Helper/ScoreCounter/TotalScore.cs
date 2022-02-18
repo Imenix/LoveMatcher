@@ -22,7 +22,7 @@ namespace LoveMatcher.Helper.ScoreCounter
         }
 
         /// <summary>
-        /// Substracts from total score.
+        /// Substracts from total score and controls that the score is not negative
         /// </summary>
         /// <param name="score">The score.</param>
         /// <returns></returns>
