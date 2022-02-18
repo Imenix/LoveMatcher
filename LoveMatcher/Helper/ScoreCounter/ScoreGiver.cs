@@ -17,10 +17,10 @@ namespace LoveMatcher.Helper.ScoreCounter
 
         public void IsOver17_Score(Person person1, Person person2)
         {
-            var Age1 = compare.IsOver17(person1.Age);
-            var Age2 = compare.IsOver17(person2.Age);
+            var age1 = compare.IsOver17(person1.Age);
+            var age2 = compare.IsOver17(person2.Age);
             
-            if ((Age1 && Age2) || (!Age1 && !Age2))
+            if ((age1 && age2) || (!age1 && !age2))
             {
                 totalScore.AddToTotal(10);
             }
