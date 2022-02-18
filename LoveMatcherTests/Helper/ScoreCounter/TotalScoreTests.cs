@@ -12,16 +12,40 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
     public class TotalScoreTests
     {
         [TestMethod()]
+        public void TotalScoreTest_ScoreNotUnderZero()
+        {
+            var minusScore = 10;
+
+            TotalScore test = new(score: 5);
+            var actual = test.SubstractFromTotal(minusScore);
+
+            var expected = 0;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
         public void AddToTotalTest()
         {
-            var oldScore = 5;
             var newScore = 10;
 
-            TotalScore test = new();
-            test.AddToTotal(oldScore);
+            TotalScore test = new(score:5);
             var actual = test.AddToTotal(newScore);
 
             var expected = 15;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void SubstractFromTotalTest()
+        {
+            var minusScore = 10;
+
+            TotalScore test = new(score:45);
+            var actual = test.SubstractFromTotal(minusScore);
+
+            var expected = 35;
 
             Assert.AreEqual(expected, actual);
         }
