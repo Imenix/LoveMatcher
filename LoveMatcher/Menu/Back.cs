@@ -1,14 +1,36 @@
 
-public class Back
+public static class Back
 {
-    public void MainMenu()
+    public static void MainMenu()
     {
+        string name1 = "";
+        string age1 = "";
+        string name2 = "";
+        string age2 = "";
+
+        Front.MainMenuText();
         var choice = Console.ReadKey();
-        switch(choice.Key)
+        Console.Clear();
+        switch (choice.Key)
         {
         case ConsoleKey.D1:
-                Front.CompareMenuFront();
-        break;
+                MenuGraphics.CompareMenuGraphics();
+                name1 = Console.ReadLine();
+                Console.Clear();
+                MenuGraphics.CompareMenuGraphics(name1);
+                age1 = Console.ReadLine();
+                Console.Clear();
+                MenuGraphics.CompareMenuGraphics(name1,age1);
+                name2 = Console.ReadLine();
+                Console.Clear();
+                MenuGraphics.CompareMenuGraphics(name1, age1,name2);
+                age2 = Console.ReadLine();
+                Console.Clear();
+                MenuGraphics.CompareMenuGraphics(name1, age1, name2, age2);
+                MenuGraphics.FillBar(70,50, 17, 9);
+                Console.ReadLine();
+
+                break;
 
         case ConsoleKey.D2:
         break;

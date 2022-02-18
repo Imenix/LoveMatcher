@@ -9,13 +9,21 @@
     /// <param name="age2">Age2.</param>
     public static void CompareMenuGraphics(string name1 = "", string age1 = "", string name2 = "", string age2 = "")
     {
-        Draw(Assets.InputBox(name1, age1), 0, 1);
+        const int barLength = 50;
+        const int leftPos = 17;
+        const int topPos = 9;
+        const int inputBoxHeight = 4;
+
+        Box.ThinBorder(new string[] {"Write the first names and ages of the ones you want to compare"}, 10,0);
+
+        Draw(Assets.InputBox(name1, age1), 0, inputBoxHeight);
 
         Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), "Red");
-        Draw(Assets.Heart, 37, 0);
+        Draw(Assets.Heart, 37, 3);
         Console.ResetColor();
 
-        Draw(Assets.InputBox(name2, age2), 51, 1);
+        Draw(Assets.InputBox(name2, age2), 51, inputBoxHeight);
+        DrawEmptyBar(barLength, leftPos, topPos);
         CursorStartPos(name1, age1, name2, age2);
         InputCheck.CheckCursorPosition();
     }
@@ -33,14 +41,6 @@
             Console.Write(subject[i]);
         }
     }
-    public static void ResultBar(int result) // använder mest som test, kommer nog slänga bort den
-    {
-        const int barLength = 50;
-        const int leftPos = 17;
-        const int topPos = 6;
-        DrawEmptyBar(barLength, leftPos, topPos);
-        FillBar(result, barLength, leftPos, topPos);
-    }
     /// <summary>
     /// Fills the empty bar made by DrawEmptyBar(). Make sure barlength, left and top is the same as DrawEmptyBar().
     /// </summary>
@@ -48,7 +48,7 @@
     /// <param name="barLength">Length of the bar.</param>
     /// <param name="left">Cursor position left.</param>
     /// <param name="top">Cursor position top.</param>
-    private static void FillBar(int result, int barLength, int left = 0, int top = 0) 
+    public static void FillBar(int result, int barLength, int left = 0, int top = 0)
     {
         int speed = 10;
         int heartSprite = 1;
@@ -69,6 +69,8 @@
             }
         }
         Console.ResetColor();
+        Console.SetCursorPosition(pos.l-1, pos.t+2);
+        Console.WriteLine(result+"%");
     }
 
     /// <summary>
@@ -80,22 +82,22 @@
     {
         if (heartSprite == 1)
         {
-            Draw(Assets.Heart, 37, 0);
+            Draw(Assets.Heart, 37, 3);
             return 2;
         }
         else if (heartSprite == 2)
         {
-            Draw(Assets.Heart2, 37, 0);
+            Draw(Assets.Heart2, 37, 3);
             return 3;
         }
         else if (heartSprite == 3)
         {
-            Draw(Assets.Heart3, 37, 0);
+            Draw(Assets.Heart3, 37, 3);
             return 4;
         }
         else if (heartSprite == 4)
         {
-            Draw(Assets.Heart2, 37, 0);
+            Draw(Assets.Heart2, 37, 3);
             return 1;
         }
         return heartSprite;
@@ -143,9 +145,9 @@
     /// <param name="age2">Age2.</param>
     private static void CursorStartPos(string name1 = "", string age1 = "", string name2 = "", string age2 = "")
     {
-        if (name1?.Length == 0) Console.SetCursorPosition(8, 2);
-        else if (age1?.Length == 0) Console.SetCursorPosition(17, 3);
-        else if (name2?.Length == 0) Console.SetCursorPosition(58, 2);
-        else if (age2?.Length == 0) Console.SetCursorPosition(67, 3);
+        if (name1?.Length == 0) Console.SetCursorPosition(8, 5);
+        else if (age1?.Length == 0) Console.SetCursorPosition(17, 6);
+        else if (name2?.Length == 0) Console.SetCursorPosition(59, 5);
+        else if (age2?.Length == 0) Console.SetCursorPosition(68, 6);
     }
 }
