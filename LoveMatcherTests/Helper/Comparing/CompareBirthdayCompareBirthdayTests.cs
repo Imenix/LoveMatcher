@@ -84,9 +84,11 @@ namespace Tests
         public void ZodiacSignTest()
         {
             var test = new CompareBirthday();
-            var date = new DateTime(1995, 2, 13);
+            var person = new Person();
+            var date = new DateTime(1990, 1, 29);
+            person.Birthday = date;
             var expected = "Aquarius";
-            var result = test.ZodiacSign(date);
+            var result = test.GetAstroSign(person);
 
             Assert.AreEqual(expected, result);
         }
