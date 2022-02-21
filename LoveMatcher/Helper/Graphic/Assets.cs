@@ -20,23 +20,33 @@ internal static class Assets
             "     ▀▄▀"
     };
     internal static string[] Heart3 = new string[]
-{
+    {
             " ▄▀▀▀▄ ▄▀▀▀▄",
             "█     ▀     █",
             "█   █▄ ▄█   █",
             " ▀▄  ▀█▀  ▄▀",
             "   ▀▄   ▄▀",
             "     ▀▄▀"
-};
+    };
     internal static string[] Heart4 = new string[]
-{
+    {
             " ▄▀▀▀▄ ▄▀▀▀▄",
             "█     ▀     █",
             "█    ▄ ▄    █",
             " ▀▄   ▀   ▄▀",
             "   ▀▄   ▄▀",
             "     ▀▄▀"
-};
+    };
+    internal static string[] PercentBox(int result)
+    {
+        return new string[]
+        {
+             "┌─┴─┐",
+            $"│{result}{AddChars(result.ToString(),3,' ')}│",
+             "└───┘"
+        };
+    }
+
     internal static string[] InputBox(string name, string age)
     {
         return new string[]

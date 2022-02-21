@@ -37,6 +37,7 @@ public static class InputCheck
     //} 
     public static void CheckCursorPosition() //https://stackoverflow.com/q/6723755  funkar nästan felfritt. ska nog kolla igenom den mer noga sen.
     {
+        
         string str = string.Empty;
         while (true)
         {

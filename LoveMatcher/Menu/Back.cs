@@ -13,27 +13,31 @@ public static class Back
         Console.Clear();
         switch (choice.Key)
         {
-        case ConsoleKey.D1:
+            case ConsoleKey.D1:
                 MenuGraphics.CompareMenuGraphics();
                 name1 = Console.ReadLine();
                 Console.Clear();
                 MenuGraphics.CompareMenuGraphics(name1);
                 age1 = Console.ReadLine();
                 Console.Clear();
-                MenuGraphics.CompareMenuGraphics(name1,age1);
+                MenuGraphics.CompareMenuGraphics(name1, age1);
                 name2 = Console.ReadLine();
                 Console.Clear();
-                MenuGraphics.CompareMenuGraphics(name1, age1,name2);
+                MenuGraphics.CompareMenuGraphics(name1, age1, name2);
                 age2 = Console.ReadLine();
                 Console.Clear();
                 MenuGraphics.CompareMenuGraphics(name1, age1, name2, age2);
-                MenuGraphics.FillBar(70,50, 17, 9);
+                MenuGraphics.FillBar(75, 50, 17, 9);
+                MenuGraphics.HeartBasedOnResult(75);
                 Console.ReadLine();
-
                 break;
 
-        case ConsoleKey.D2:
-        break;
+            case ConsoleKey.D2:
+                Environment.Exit(0);
+                break;
+            default:
+                MainMenu();
+                break;
         }
     }
 }

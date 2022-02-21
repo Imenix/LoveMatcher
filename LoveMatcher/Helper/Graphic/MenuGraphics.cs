@@ -17,15 +17,11 @@
         Box.ThinBorder(new string[] {"Write the first names and ages of the ones you want to compare"}, 10,0);
 
         Draw(Assets.InputBox(name1, age1), 0, inputBoxHeight);
-
-        Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), "Red");
-        Draw(Assets.Heart, 37, 3);
-        Console.ResetColor();
-
+        Draw(Assets.Heart, 37, 3, "Red");
         Draw(Assets.InputBox(name2, age2), 51, inputBoxHeight);
         DrawEmptyBar(barLength, leftPos, topPos);
         CursorStartPos(name1, age1, name2, age2);
-        InputCheck.CheckCursorPosition();
+        //InputCheck.CheckCursorPosition();
     }
     /// <summary>
     /// Draws the specified string array subject. Decide starting point by specifying the cursor position, else position is 0,0
@@ -33,14 +29,19 @@
     /// <param name="subject">The subject.</param>
     /// <param name="leftPos">Cursor position left.</param>
     /// <param name="topPos">Cursor position top.</param>
-    private static void Draw(string[] subject, int leftPos=0, int topPos=0)
+    /// <param name="color">Color of subject.</param>
+    private static void Draw( string[] subject, int leftPos=0, int topPos=0, string color = "White")
     {
+        Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), color);
+
         for (int i = 0; i < subject.Length; i++)
         {
             Console.SetCursorPosition(leftPos, topPos + i); //+i makes it change row.
             Console.Write(subject[i]);
         }
+        Console.ResetColor();
     }
+
     /// <summary>
     /// Fills the empty bar made by DrawEmptyBar(). Make sure barlength, left and top is the same as DrawEmptyBar().
     /// </summary>
@@ -55,9 +56,8 @@
         (int l, int t) pos = (left+1,top+1);
         Console.SetCursorPosition(pos.l,pos.t); //so the filled bar begins inside the bar     
 
-        Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), "Red");
+        Console.ForegroundColor = ConsoleColor.Red;
         for (int i = 0; i < barLength; i++)
-        {
             if (result / 2 > i) //While barLength is 50 and highest score is 100 the result has to be halved to be accurate
             {
                 Console.SetCursorPosition(pos.l, pos.t);
@@ -66,11 +66,11 @@
                 Console.Write("█");
                 pos = Console.GetCursorPosition();
                 heartSprite = AnimateHeart(heartSprite);
+                Console.ForegroundColor = ConsoleColor.Red;
             }
-        }
         Console.ResetColor();
-        Console.SetCursorPosition(pos.l-1, pos.t+2);
-        Console.WriteLine(result+"%");
+        //Console.SetCursorPosition(pos.l-1, pos.t+2);
+        Draw(Assets.PercentBox(result), pos.l - 3, pos.t + 2);
     }
 
     /// <summary>
@@ -80,27 +80,50 @@
     /// <returns></returns>
     private static int AnimateHeart(int heartSprite)
     {
-        if (heartSprite == 1)
+        int[] pos = { 37, 3 };
+        switch (heartSprite)
         {
-            Draw(Assets.Heart, 37, 3);
-            return 2;
-        }
-        else if (heartSprite == 2)
-        {
-            Draw(Assets.Heart2, 37, 3);
-            return 3;
-        }
-        else if (heartSprite == 3)
-        {
-            Draw(Assets.Heart3, 37, 3);
-            return 4;
-        }
-        else if (heartSprite == 4)
-        {
-            Draw(Assets.Heart2, 37, 3);
-            return 1;
+            case 1:
+                Draw(Assets.Heart, pos[0], pos[1], "Red");
+                return 2;
+            case 2:
+                Draw(Assets.Heart2, pos[0], pos[1],"DarkRed");
+                return 3;
+            case 3:
+                Draw(Assets.Heart3, pos[0], pos[1],"DarkMagenta");
+                return 4;
+            case 4:
+                Draw(Assets.Heart4, pos[0], pos[1],"Magenta");
+                return 5;
+            case 5:
+                Draw(Assets.Heart3, pos[0], pos[1],"DarkMagenta");
+                return 6;
+            case 6:
+                Draw(Assets.Heart2, pos[0], pos[1],"DarkRed");
+                return 1;
+            default: Draw(Assets.Heart, pos[0], pos[1], "Red");
+                break;
         }
         return heartSprite;
+    }
+    public static void HeartBasedOnResult(int result)
+    {
+        int[] pos = { 37, 3 };
+        switch (result)
+        {
+            case <24:
+                    Draw(Assets.Heart4, pos[0], pos[1], "DarkRed");
+                break;
+            case < 49:
+                Draw(Assets.Heart3, pos[0], pos[1],"DarkMagenta");
+                break;
+            case < 74:
+                Draw(Assets.Heart2, pos[0], pos[1],"Magenta");
+                break;
+            case < 101:
+                Draw(Assets.Heart, pos[0], pos[1],"Red");
+                break;
+        }
     }
 
     /// <summary>
