@@ -9,5 +9,18 @@ public static class Front
            });
     }
 
+    public static void CompareMenuFront()
+    {
+        Box.ThinBorder(new string[]
+        {"Write the first names and ages of the ones you want to compare"
+        });
+        MenuGraphics.CompareMenuGraphics();
+    }
 
- }
+
+
+    public static void ResultMenu()
+    {
+            return;
+    }
+}
