@@ -30,12 +30,21 @@ public static class Back
         string age2 = "";
         int result = 1;
 
-        MenuGraphics.CompareMenuGraphics();
-        name1 = Console.ReadLine();
+        do
+        {
+            MenuGraphics.CompareMenuGraphics();
+            name1 = Console.ReadLine();
+        } while (!InputCheck.CheckLetters(name1));
+
         Console.Clear();
 
-        MenuGraphics.CompareMenuGraphics(name1);
-        age1 = Console.ReadLine();
+        do
+        {
+            MenuGraphics.CompareMenuGraphics(name1);
+            age1 = Console.ReadLine();
+
+        } while (!InputCheck.CheckDateTimeFormat(age1));
+
         Console.Clear();
 
         MenuGraphics.CompareMenuGraphics(name1, age1);
