@@ -1,25 +1,27 @@
+using System.Globalization;
+
 public static class InputCheck
 {
     /// <summary>
-    /// Checks the age.
+    /// Checks if the age is between 0 and 100.
     /// </summary>
-    /// <param name="age">The age.</param>
-    /// <returns></returns>
-    public static int CheckAge(int age)
+    /// <param name="input">Birthdate in string format.</param>
+    /// <returns>True if age is between 0 and 100. /returns>
+    public static bool CheckAge(string input)
     {
-        if (age < 0) return 0;
-        else if (age > 100) return 100;
-        else return age;
-        //return age > 0|| age < 100;
+        DateTime.TryParse(input, out DateTime birthDate);
+        var age = DateTime.Today.Year - birthDate.Year;
+        return age > 0 && age < 100;
     }
 
     /// <summary>
     /// Checks the format of the DateTime
     /// </summary>
     /// <returns>True or false.</returns>
-    public static bool CheckDateTimeFormat(string date) //https://stackoverflow.com/questions/371987/how-to-validate-a-datetime-in-c
+    public static bool CheckDateTimeFormat(string date) //https://stackoverflow.com/a/11999950
     {
-        return DateTime.TryParse(date, out _);
+        string[] formats = { "yyyy/MM/dd", "yyyy-MM-dd", "yyyy MM dd" };
+        return DateTime.TryParseExact(date, formats, CultureInfo.InvariantCulture,DateTimeStyles.None, out _);
     }
 
     /// <summary>
@@ -28,11 +30,10 @@ public static class InputCheck
     /// <returns>True or false.</returns>
     public static bool CheckLetters(string input)  //https://stackoverflow.com/a/34264342
     {
-        return input.All(c => char.IsLetter(c) || c.Equals('-'));
+        return input.All(c => char.IsLetter(c) || c.Equals('-') || c.Equals(' '));
     }
     public static void CheckCursorPosition() //https://stackoverflow.com/q/6723755  funkar nästan felfritt. ska nog kolla igenom den mer noga sen.
     {
-        
         string str = string.Empty;
         while (true)
         {

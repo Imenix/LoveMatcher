@@ -36,25 +36,36 @@ public static class Back
             name1 = Console.ReadLine();
         } while (!InputCheck.CheckLetters(name1));
 
-        Console.Clear();
+        //<-- på denna raden ska person1 få sitt namn tilldelat
+        
+        do
+        {
+            Console.Clear();
+            MenuGraphics.CompareMenuGraphics(name1);
+            age1 = Console.ReadLine();
+        } while (!InputCheck.CheckDateTimeFormat(age1) && InputCheck.CheckAge(age1));
+
+        //<-- på denna raden ska person1 få sin ålder tilldelat
+        
+        do
+        {
+            Console.Clear();
+            MenuGraphics.CompareMenuGraphics(name1, age1);
+            name2 = Console.ReadLine();
+        } while (!InputCheck.CheckLetters(name2));
+
+        //<-- på denna raden ska person2 få sitt namn tilldelat
 
         do
         {
-            MenuGraphics.CompareMenuGraphics(name1);
-            age1 = Console.ReadLine();
+            Console.Clear();
+            MenuGraphics.CompareMenuGraphics(name1, age1, name2);
+            age2 = Console.ReadLine();
+        } while (!InputCheck.CheckDateTimeFormat(age2));
 
-        } while (!InputCheck.CheckDateTimeFormat(age1));
+        //<-- på denna raden ska person2 få sin ålder tilldelat
 
         Console.Clear();
-
-        MenuGraphics.CompareMenuGraphics(name1, age1);
-        name2 = Console.ReadLine();
-        Console.Clear();
-
-        MenuGraphics.CompareMenuGraphics(name1, age1, name2);
-        age2 = Console.ReadLine();
-        Console.Clear();
-
         MenuGraphics.CompareMenuGraphics(name1, age1, name2, age2);
         MenuGraphics.FillBar(result, 50, 17, 9);
         MenuGraphics.HeartBasedOnResult(result);
