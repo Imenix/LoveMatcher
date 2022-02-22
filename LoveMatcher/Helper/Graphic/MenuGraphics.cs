@@ -109,20 +109,21 @@
     public static void HeartBasedOnResult(int result)
     {
         int[] pos = { 37, 3 };
-        switch (result)
+        if (result is < 25 and > 0)
         {
-            case <24:
-                    Draw(Assets.Heart4, pos[0], pos[1], "DarkRed");
-                break;
-            case < 49:
-                Draw(Assets.Heart3, pos[0], pos[1],"DarkMagenta");
-                break;
-            case < 74:
-                Draw(Assets.Heart2, pos[0], pos[1],"Magenta");
-                break;
-            case < 101:
-                Draw(Assets.Heart, pos[0], pos[1],"Red");
-                break;
+            Draw(Assets.Heart4, pos[0], pos[1], "DarkRed");
+        }
+        else if (result is < 50 and >=25)
+        {
+            Draw(Assets.Heart3, pos[0], pos[1], "DarkMagenta");
+        }
+        else if (result is < 75 and >=50)
+        {
+            Draw(Assets.Heart2, pos[0], pos[1], "Magenta");
+        }
+        else if (result is >= 75)
+        {
+            Draw(Assets.Heart, pos[0], pos[1], "Red");
         }
     }
 

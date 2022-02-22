@@ -7,6 +7,7 @@ public static class Back
         string age1 = "";
         string name2 = "";
         string age2 = "";
+        int result = 1;
 
         Front.MainMenuText();
         var choice = Console.ReadKey();
@@ -27,8 +28,8 @@ public static class Back
                 age2 = Console.ReadLine();
                 Console.Clear();
                 MenuGraphics.CompareMenuGraphics(name1, age1, name2, age2);
-                MenuGraphics.FillBar(75, 50, 17, 9);
-                MenuGraphics.HeartBasedOnResult(75);
+                MenuGraphics.FillBar(result, 50, 17, 9);
+                MenuGraphics.HeartBasedOnResult(result);
                 Console.ReadLine();
                 break;
 
