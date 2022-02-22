@@ -23,6 +23,7 @@
         CursorStartPos(name1, age1, name2, age2);
         //InputCheck.CheckCursorPosition();
     }
+
     /// <summary>
     /// Draws the specified string array subject. Decide starting point by specifying the cursor position, else position is 0,0
     /// </summary>
@@ -106,6 +107,11 @@
         }
         return heartSprite;
     }
+
+    /// <summary>
+    /// Draws a heart based on the result. The higher the score the more filled the heart is.
+    /// </summary>
+    /// <param name="result">The result.</param>
     public static void HeartBasedOnResult(int result)
     {
         int[] pos = { 37, 3 };

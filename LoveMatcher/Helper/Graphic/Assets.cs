@@ -37,6 +37,12 @@ internal static class Assets
             "   ▀▄   ▄▀",
             "     ▀▄▀"
     };
+
+    /// <summary>
+    /// Takes the result and puts it in a box that the Draw() function can use.
+    /// </summary>
+    /// <param name="result">The result.</param>
+    /// <returns>A box with the result in it.</returns>
     internal static string[] PercentBox(int result)
     {
         return new string[]
@@ -47,6 +53,12 @@ internal static class Assets
         };
     }
 
+    /// <summary>
+    /// Takes a name and an age string and puts it in a box that the Draw() function can use.
+    /// </summary>
+    /// <param name="name">The name.</param>
+    /// <param name="age">The age.</param>
+    /// <returns>A box with a name and an age.</returns>
     internal static string[] InputBox(string name, string age)
     {
         return new string[]
@@ -57,6 +69,7 @@ internal static class Assets
             "└──────────────────────────────────┘"
         };
     }
+
     /// <summary>
     /// Adds a string with the amount of spaces needed to reach a "wall" in the graphic box.
     /// This is so that the box will stay the same size regardless of what length the names are.
