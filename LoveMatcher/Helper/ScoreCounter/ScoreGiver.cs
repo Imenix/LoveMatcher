@@ -8,6 +8,6 @@ namespace LoveMatcher.Helper.ScoreCounter
 {
     internal class ScoreGiver
     {
-
+        
     }
 }
