@@ -12,32 +12,99 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
     public class ScoreGiverTests
     {
         [TestMethod()]
-        public void AgeDifference_ScoreTest()
+        public void AgeDifference_ScoreTest_ZeroDiff()
         {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void IsOver17_ScoreTest()
-        {
-            Person person1 = new();
-            person1.Age = 18;
-
-            Person person2 = new();
-            person2.Age = 22;
+            var age1 = 35;
+            var age2 = 35;
 
             ScoreGiver test = new();
-            var actual = test.IsOver17_Score(person1, person2);
+            var actual = test.AgeDifference_Score(age1, age2);
 
-            var expected = 10;
+            var expected = 65;
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod()]
-        public void AgeIsEvenNumber_ScoreTest()
+        public void AgeDifference_ScoreTest_DiffBetween_0And9()
         {
-            Assert.Fail();
+            var age1 = 88;
+            var age2 = 92;
+
+            ScoreGiver test = new();
+            var actual = test.AgeDifference_Score(age1, age2);
+
+            var expected = 60;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void AgeDifference_ScoreTest_DiffBetween_10And19()
+        {
+            var age1 = 18;
+            var age2 = 37;
+
+            ScoreGiver test = new();
+            var actual = test.AgeDifference_Score(age1, age2);
+
+            var expected = 55;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void AgeDifference_ScoreTest_Diff_Over20()
+        {
+            var age1 = 20;
+            var age2 = 60;
+
+            ScoreGiver test = new();
+            var actual = test.AgeDifference_Score(age1, age2);
+
+            var expected = 45;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        [DataRow(22, 30)]
+        [DataRow(15, 17)]
+        public void IsOver17_ScoreTest_BothTrueOrFalse(int age1, int age2)
+        {
+            ScoreGiver test = new();
+            var actual = test.IsOver17_Score(age1, age2);
+
+            var expected = 60;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        [DataRow(22, 30)]
+        [DataRow(59, 77)]
+        public void AgeIsEvenNumber_ScoreTest(int age1, int age2)
+        {
+            ScoreGiver test = new();
+            var actual = test.AgeIsEvenNumber_Score(age1, age2);
+
+            var expected = 60;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void AgeIsEvenNumber_ScoreTest_TrueAndFalse()
+        {
+            var age1 = 25;
+            var age2 = 34;
+
+            ScoreGiver test = new();
+            var actual = test.AgeIsEvenNumber_Score(age1, age2);
+
+            var expected = 45;
+
+            Assert.AreEqual(expected, actual);
         }
     }
 }

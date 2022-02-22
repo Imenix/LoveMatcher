@@ -8,34 +8,60 @@ namespace LoveMatcher.Helper.ScoreCounter
 {
     public class ScoreGiver
     {
-        readonly CompareAge compare = new();
-        readonly TotalScore totalScore = new();
-        public int AgeDifference_Score(Person person1, Person person2)
+        CompareAge compare = new();
+        TotalScore totalScore = new();
+
+        /// <summary>
+        /// Checks difference in age and gives or takes points accordingly
+        /// </summary>
+        /// <param name="age1">Age of the first person.</param>
+        /// <param name="age2">Age of the second person.</param>
+        /// <returns></returns>
+        public int AgeDifference_Score(int age1, int age2)
         {
-            var diff = compare.AgeDifference(person1.Age, person2.Age);
+            var diff = compare.AgeDifference(age1,age2);
 
             return diff switch
             {
                 0 => totalScore.AddToTotal(15),
                 > 0 and < 10 => totalScore.AddToTotal(10),
-                >= 10 and < 20 => totalScore.AddToTotal(10),
+                >= 10 and < 20 => totalScore.AddToTotal(5),
                 _ => totalScore.SubstractFromTotal(5),
             };
         }
-        public int IsOver17_Score(Person person1, Person person2)
+
+        /// <summary>
+        /// Determines whether both persons' age is at least 18 and gives points accordingly.
+        /// </summary>
+        /// <param name="person1">The first person.</param>
+        /// <param name="person2">The second person.</param>
+        /// <returns></returns>
+        public int IsOver17_Score(int age1, int age2)
         {
-            var age1 = compare.IsOver17(person1.Age);
-            var age2 = compare.IsOver17(person2.Age);
-            return GiveScore(age1, age2);
+            var ofAge1 = compare.IsOver17(age1);
+            var ofAge2 = compare.IsOver17(age2);
+            return GiveScore(ofAge1, ofAge2);
         }
 
-        public int AgeIsEvenNumber_Score(Person person1, Person person2)
+        /// <summary>
+        /// Determines whether both persons' age is even or odd and gives points accordingly.
+        /// </summary>
+        /// <param name="person1">The first person.</param>
+        /// <param name="person2">The second person.</param>
+        /// <returns></returns>
+        public int AgeIsEvenNumber_Score(int age1, int age2)
         {
-            var age1 = compare.AgeIsEvenNumber(person1.Age);
-            var age2 = compare.AgeIsEvenNumber(person2.Age);
-            return GiveScore(age1, age2);
+            var even1 = compare.AgeIsEvenNumber(age1);
+            var even2 = compare.AgeIsEvenNumber(age2);
+            return GiveScore(even1, even2);
         }
 
+        /// <summary>
+        /// Helpmethod for checking if both variables are true or false.
+        /// </summary>
+        /// <param name="age1">if set to <c>true</c> [age1].</param>
+        /// <param name="age2">if set to <c>true</c> [age2].</param>
+        /// <returns></returns>
         private int GiveScore(bool age1, bool age2)
         {
             if ((age1 && age2) || (!age1 && !age2))
