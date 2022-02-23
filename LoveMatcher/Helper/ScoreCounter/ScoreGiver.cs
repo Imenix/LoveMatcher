@@ -157,6 +157,5 @@ namespace LoveMatcher.Helper.ScoreCounter
             else { return 0; };
             
         }
-
     }
 }
