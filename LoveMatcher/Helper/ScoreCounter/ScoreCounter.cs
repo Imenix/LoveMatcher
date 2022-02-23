@@ -52,7 +52,11 @@ namespace LoveMatcher.Helper.ScoreCounter
         /// <param name="bd2">The birthday of the second person.</param>
         public void BirthdayScore(DateTime bd1, DateTime bd2)
         {
-
+            //add.CompareMonthScore();
+            //add.CompareDayScore();
+            //add.MonthEvenNumberScore();
+            //add.DayEvenNumberScore();
+            //add.GetZodiacSignScore();
         }
 
         /// <summary>
