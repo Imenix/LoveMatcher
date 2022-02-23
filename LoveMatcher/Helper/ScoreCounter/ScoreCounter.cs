@@ -12,10 +12,10 @@ namespace LoveMatcher.Helper.ScoreCounter
         ScoreGiver add = new();
 
         /// <summary>
-        /// Adds all the scores together to Total
+        /// Sums up all the scores to Total.
         /// </summary>
-        /// <param name="person1">The person1.</param>
-        /// <param name="person2">The person2.</param>
+        /// <param name="person1">The first person.</param>
+        /// <param name="person2">The second person.</param>
         public void GivePersonScore(Person person1, Person person2) //plussar ihop alla tre
         {
             var name1 = person1.Name;
@@ -31,6 +31,11 @@ namespace LoveMatcher.Helper.ScoreCounter
             AgeScore(age1,age2);
         }
 
+        /// <summary>
+        /// Adds score from Name methods.
+        /// </summary>
+        /// <param name="name1">The name of the first person.</param>
+        /// <param name="name2">The name of the second person.</param>
         public void NameScore(string name1, string name2)
         {
             //add.LengthNameScore();
@@ -40,11 +45,25 @@ namespace LoveMatcher.Helper.ScoreCounter
             //add.NumberOfSameLetters_Score();
         }
 
+        /// <summary>
+        /// Adds score from Birthday methods.
+        /// </summary>
+        /// <param name="bd1">The birthday of the first person.</param>
+        /// <param name="bd2">The birthday of the second person.</param>
         public void BirthdayScore(DateTime bd1, DateTime bd2)
         {
-
+            //add.CompareMonthScore();
+            //add.CompareDayScore();
+            //add.MonthEvenNumberScore();
+            //add.DayEvenNumberScore();
+            //add.GetZodiacSignScore();
         }
 
+        /// <summary>
+        /// Adds score from Age methods.
+        /// </summary>
+        /// <param name="age1">The age of the first person.</param>
+        /// <param name="age2">The age of the second person.</param>
         public void AgeScore(int age1, int age2)
         {
             add.AgeDifference_Score(age1, age2);
