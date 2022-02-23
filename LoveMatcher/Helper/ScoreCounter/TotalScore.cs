@@ -8,7 +8,7 @@ namespace LoveMatcher.Helper.ScoreCounter
 {
     public class TotalScore
     {
-        public static int Total { get; set; } = 50;
+        public int Total { get; set; } = 50;
    
         /// <summary>
         /// Adds to the total score.
