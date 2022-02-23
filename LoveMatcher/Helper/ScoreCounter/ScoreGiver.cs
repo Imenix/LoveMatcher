@@ -160,3 +160,47 @@ namespace LoveMatcher.Helper.ScoreCounter
         }
     }
 }
+        public int NumberOfSameLettersScore()
+        {
+            return 0;
+        }
+        public void CompareMonthScore(int diff)
+        {
+            if (diff <= 4) totalScore.AddToTotal(10);
+            else if (diff > 4 && diff <= 8) totalScore.AddToTotal(0);
+            else totalScore.SubstractFromTotal(5);
+        }
+        public void CompareDayScore(int diff)
+        {
+            if (diff <= 10) totalScore.AddToTotal(10);
+            else if (diff > 10 && diff <= 20) totalScore.AddToTotal(0);
+            else totalScore.SubstractFromTotal(5);
+        }
+        public void MonthEvenNumberScore(bool person1, bool person2)
+        {
+            if ((person1 && person2) || (!person1 && !person2)) totalScore.AddToTotal(10);
+            else totalScore.SubstractFromTotal(5);
+        }
+        public void DayEvenNumberScore(bool person1, bool person2)
+        {
+            if ((person1 && person2) || (!person1 && !person2)) totalScore.AddToTotal(10);
+            else totalScore.SubstractFromTotal(5);
+        }
+        public void GetZodiacSignScore(string zodiac1, string zodiac2)
+        {
+            GetZodiacElement(zodiac1);
+            GetZodiacElement(zodiac2);
+            if ((zodiac1 == "Fire" && zodiac2 == "Air") || (zodiac2 == "Fire" && zodiac1 == "Air")) totalScore.AddToTotal(10);
+            else if ((zodiac1 == "Water" && zodiac2 == "Earth") || (zodiac2 == "Earth" && zodiac1 == "Water")) totalScore.AddToTotal(10);
+            else totalScore.SubstractFromTotal(0);
+
+        }
+        private void GetZodiacElement(string element)
+        {
+            if (element == "Aries" || element == "Leo" || element == "Saggitarius") element = "Fire";
+            else if (element == "Taurus" || element == "Virgo" || element == "Capricorn") element = "Earth";
+            else if (element == "Gemini" || element == "Libra" || element == "Aquarius") element = "Air";
+            else element = "Water";
+        }
+    }
+}
