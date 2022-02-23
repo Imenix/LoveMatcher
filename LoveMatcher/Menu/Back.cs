@@ -1,4 +1,3 @@
-
 public static class Back
 {
     public static void MainMenu()
@@ -24,19 +23,23 @@ public static class Back
 
     private static void CompareMenu()
     {
-        string name1 = "";
-        string age1 = "";
-        string name2 = "";
-        string age2 = "";
-        int result = 1;
+        Person person1 = new();
+        Person person2 = new();
 
+        string name1;
+        string age1;
+        string name2;
+        string age2;
+        int result;
+
+        #region Person1
         do
         {
             MenuGraphics.CompareMenuGraphics();
             name1 = Console.ReadLine();
         } while (!InputCheck.CheckLetters(name1));
 
-        //<-- på denna raden ska person1 få sitt namn tilldelat
+        person1.Name = Converting.ToCleanName(name1);
 
         do
         {
@@ -45,8 +48,10 @@ public static class Back
             age1 = Console.ReadLine();
         } while (!InputCheck.CheckDateTimeFormat(age1) && InputCheck.CheckAge(age1));
 
-        //<-- på denna raden ska person1 få sin ålder tilldelat
+        person1.Birthday = Converting.ToExactDateTime(age1);
+        #endregion
 
+        #region Person2
         do
         {
             Console.Clear();
@@ -54,17 +59,22 @@ public static class Back
             name2 = Console.ReadLine();
         } while (!InputCheck.CheckLetters(name2));
 
-        //<-- på denna raden ska person2 få sitt namn tilldelat
+        person2.Name = Converting.ToCleanName(name2);
 
         do
         {
             Console.Clear();
             MenuGraphics.CompareMenuGraphics(name1, age1, name2);
             age2 = Console.ReadLine();
-        } while (!InputCheck.CheckDateTimeFormat(age2));
+        } while (!InputCheck.CheckDateTimeFormat(age2) && InputCheck.CheckAge(age2));
 
-        //<-- på denna raden ska person2 få sin ålder tilldelat
+        person2.Birthday = Converting.ToExactDateTime(age2);
+        #endregion
 
+
+        // här ska allt alängas in o jämföras.
+
+        result = 0; // resultatet får värdet efter alla tester
         Console.Clear();
         MenuGraphics.CompareMenuGraphics(name1, age1, name2, age2);
         MenuGraphics.FillBar(result, 50, 17, 9);
