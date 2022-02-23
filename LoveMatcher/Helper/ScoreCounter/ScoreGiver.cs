@@ -74,6 +74,7 @@ namespace LoveMatcher.Helper.ScoreCounter
                 return totalScore.SubstractFromTotal(5);
             }
         }
+
         public int LengthName_Score(Person person1, Person person2)
         {
             var totalLength = cn.LengthName(person1.Name)+ cn.LengthName(person2.Name);

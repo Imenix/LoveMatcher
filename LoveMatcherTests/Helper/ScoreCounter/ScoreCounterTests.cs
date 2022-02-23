@@ -14,13 +14,62 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [TestMethod()]
         public void PersonScoreTest()
         {
-            //ScoreCounter counter = new();
-            //counter.
-            //var actual = 0;
+            // Person 1 -----------------------------------------
+            Person person1 = new();
+            person1.Name = "Angelina";
 
-            //var expected = 0;
-            
-            //Assert.AreEqual(expected, actual);
+            var date1 = new DateTime(1975, 06, 04);
+            person1.Birthday = date1;
+            person1.Age = 46;
+
+            // Person 2 -----------------------------------------
+            Person person2 = new();
+            person2.Name = "Brad";
+
+            var date2 = new DateTime(1963, 12, 18);
+            person2.Birthday = date2;
+            person2.Age = 58;
+
+            // ---------------------------------------------------
+
+            ScoreCounter counter = new();
+            counter.GivePersonScore(person1, person2);
+
+            var actual = TotalScore.Total;
+
+            var expected = 75;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [TestMethod()]
+        public void NameScoreTest()
+        {
+
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void BirthdayScoreTest()
+        {
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void AgeScoreTest()
+        {
+            int age1 = 46;
+            int age2 = 58;
+
+            ScoreCounter test = new();
+            test.AgeScore(age1, age2);
+
+            var actual = TotalScore.Total;
+
+            var expected = 75;
+
+            Assert.AreEqual(expected, actual);
         }
     }
 }

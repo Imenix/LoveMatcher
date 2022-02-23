@@ -10,8 +10,13 @@ namespace LoveMatcher.Helper.ScoreCounter
     public class ScoreCounter
     {
         ScoreGiver add = new();
-        
-        public void PersonScore(Person person1, Person person2) //plussar ihop alla tre
+
+        /// <summary>
+        /// Adds all the scores together to Total
+        /// </summary>
+        /// <param name="person1">The person1.</param>
+        /// <param name="person2">The person2.</param>
+        public void GivePersonScore(Person person1, Person person2) //plussar ihop alla tre
         {
             var name1 = person1.Name;
             var bd1 = person1.Birthday;
@@ -26,7 +31,7 @@ namespace LoveMatcher.Helper.ScoreCounter
             AgeScore(age1,age2);
         }
 
-        private void NameScore(string name1, string name2)
+        public void NameScore(string name1, string name2)
         {
             //add.LengthNameScore();
             //add.LengthIsEven_Score();
@@ -35,12 +40,12 @@ namespace LoveMatcher.Helper.ScoreCounter
             //add.NumberOfSameLetters_Score();
         }
 
-        private void BirthdayScore(DateTime bd1, DateTime bd2)
+        public void BirthdayScore(DateTime bd1, DateTime bd2)
         {
 
         }
 
-        private void AgeScore(int age1, int age2)
+        public void AgeScore(int age1, int age2)
         {
             add.AgeDifference_Score(age1, age2);
             add.IsOver17_Score(age1, age2);
