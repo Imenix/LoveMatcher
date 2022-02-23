@@ -76,6 +76,7 @@ internal static class Assets
     /// </summary>
     /// <param name="text">The text.</param>
     /// <param name="length">The length.</param>
+    /// <param name="symbol">What char to use.</param>
     /// <returns>Returns a string consisting of the number of chars needed to reach the length given.</returns>
     private static string AddChars(string text, int length, char symbol)
     {

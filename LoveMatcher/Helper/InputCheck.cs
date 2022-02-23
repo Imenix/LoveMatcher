@@ -25,12 +25,13 @@ public static class InputCheck
     }
 
     /// <summary>
-    /// Controls that the input is only letters or '-'.
+    /// Controls that the input is only letters, " " or '-'. Cannot be only " " or '-';
     /// </summary>
     /// <returns>True or false.</returns>
     public static bool CheckLetters(string input)  //https://stackoverflow.com/a/34264342
     {
-        return input.All(c => char.IsLetter(c) || c.Equals('-') || c.Equals(' '));
+        if (input.All(c => c.Equals(' ')) || input.All(c => c.Equals('-'))) return false;
+        else return input.All(c => char.IsLetter(c) || c.Equals('-') || c.Equals(' '));
     }
     public static void CheckCursorPosition() //https://stackoverflow.com/q/6723755  funkar nästan felfritt. ska nog kolla igenom den mer noga sen.
     {

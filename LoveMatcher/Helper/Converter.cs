@@ -35,9 +35,15 @@ public static class Converting
     /// <returns></returns>
     public static string ToCleanName(string name)
     {
-        name = name.Trim();
-        var firstLetter = name.Substring(0, 1).ToUpper();
-        var rest = name.Substring(1).ToLower();
-        return firstLetter + rest;
+        if (name != "")
+        {
+            name = name.Trim();
+            var firstLetter = name.Substring(0, 1).ToUpper();
+            var rest = name.Substring(1).ToLower();
+            return firstLetter + rest;
+        }
+        else return name;
+
+
     }
 }
