@@ -1,22 +1,22 @@
 namespace LoveMatcher.Helper.Comparing
 {
     public class CompareName
-    {
-        //skillnad på längd
+    {     
         /// <summary>
         /// Calculates the difference between lenght of the names
         /// </summary>
-        public int LengthName(string name)
+        /// <param name="name">The name.</param>
+        /// <returns></returns>
+        public int LengthName(string name)  //är inte denna metoden fel? Det enda den gör är ju att skriva name.Lenght, den jämför inte något
         {
             var nameLength = name.Length;
             return nameLength;
         }
 
-        //är längderna udda eller jämna
         /// <summary>
-        /// Checks if lenght of the name is even or not
+        /// Checks if length of the name is even or not
         /// </summary>
-        /// <returns></returns>
+        /// <returns>True if length is even</returns>
         public bool LengthIsEven(string name)
         {
             var nameLength = name.Length;
@@ -24,9 +24,8 @@ namespace LoveMatcher.Helper.Comparing
             else return false;
         }
 
-        //skillnad i mängd vokaler
         /// <summary>
-        /// Checks the number of vowels in the name.
+        /// Checks the amount of vowels in the name.
         /// </summary>
         /// <returns>The amount of vowels.</returns>
         public int NumberOfVowels(string name)
@@ -36,9 +35,8 @@ namespace LoveMatcher.Helper.Comparing
             return vowelSum;
         }
 
-        //skillnad i mängd konsonanter
         /// <summary>
-        /// Checks the number of consonants in the name.
+        /// Checks the amount of consonants in the name.
         /// </summary>
         /// <returns>The amount of consonants.</returns>
         public int NumberOfConsonants(string name)
@@ -48,11 +46,10 @@ namespace LoveMatcher.Helper.Comparing
             return consonantSum;
         }
 
-        //Skillnad i mängd dubbla bokstäver
         /// <summary>
-        /// Checks how many same letters the names have.
+        /// Checks how many of the same letters the names have.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The amount of duplicate letters.</returns>
         public int NumberOfSameLetters(string nameA, string nameB)
         {
             var point = 0;
