@@ -71,12 +71,12 @@ internal static class Assets
     }
 
     /// <summary>
-    /// Adds a string with the amount of spaces needed to reach a "wall" in the graphic box.
-    /// This is so that the box will stay the same size regardless of what length the names are.
+    /// Adds a string with the amount of chars needed to reach a "wall" in the graphic box.
+    /// This is so that the boxes will stay the same size regardless of what length the names are.
     /// </summary>
     /// <param name="text">The text.</param>
     /// <param name="length">The length.</param>
-    /// <returns>Returns a string consisting of the number of " " needed to reach the length given.</returns>
+    /// <returns>Returns a string consisting of the number of chars needed to reach the length given.</returns>
     private static string AddChars(string text, int length, char symbol)
     {
         int amount = length - text.Length;

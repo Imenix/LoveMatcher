@@ -37,7 +37,7 @@ public static class Back
         } while (!InputCheck.CheckLetters(name1));
 
         //<-- på denna raden ska person1 få sitt namn tilldelat
-        
+
         do
         {
             Console.Clear();
@@ -46,7 +46,7 @@ public static class Back
         } while (!InputCheck.CheckDateTimeFormat(age1) && InputCheck.CheckAge(age1));
 
         //<-- på denna raden ska person1 få sin ålder tilldelat
-        
+
         do
         {
             Console.Clear();
