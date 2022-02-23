@@ -29,10 +29,10 @@ namespace LoveMatcher.Helper.ScoreCounter
         private void NameScore(string name1, string name2)
         {
             //add.LengthNameScore();
-            add.LengthIsEvenScore();
-            add.NumberOfVowelsScore();
-            add.NumberOfConsonantsScore();
-            add.NumberOfSameLettersScore();
+            //add.LengthIsEven_Score();
+            //add.NumberOfVowels_Score();
+            //add.NumberOfConsonants_Score();
+            //add.NumberOfSameLetters_Score();
         }
 
         private void BirthdayScore(DateTime bd1, DateTime bd2)
