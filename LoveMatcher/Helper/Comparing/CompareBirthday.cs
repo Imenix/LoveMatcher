@@ -1,28 +1,32 @@
-//skillnad i månad
-//är båda månaderna jämna eller udda dagar
-//skillnad i dag
-//är båda dagarna jämna eller udda dagar
-//vilket stjärntecken/element
 public class CompareBirthday
 {
     /// <summary>
-    /// Compares both months.
+    /// Compares two months.
     /// </summary>
-    public int CompareMonth(DateTime date1, DateTime date2)
+    /// <param name="date1">The date1.</param>
+    /// <param name="date2">The date2.</param>
+    /// <returns>Difference in months.</returns>
+    public int CompareMonth(DateTime date1, DateTime date2) //borde heta MonthDifference kanske? Precis som AgeDifference
     {
         if (date1.Month < date2.Month) return date2.Month - date1.Month;
         else return date1.Month - date2.Month;
     }
     /// <summary>
-    /// Compares both days.
-    public int CompareDay(DateTime date1, DateTime date2)
+    /// Compares two days.
+    /// </summary>
+    /// <param name="date1">The date1.</param>
+    /// <param name="date2">The date2.</param>
+    /// <returns>Difference in days.</returns>
+    public int CompareDay(DateTime date1, DateTime date2) //borde heta DayDifference kanske? Precis som AgeDifference
     {
         if (date1.Day < date2.Day) return date2.Day - date1.Day;
         else return date1.Day - date2.Day;
     }
     /// <summary>
-    /// Checks if the months date is a even number
+    /// Checks if month is an even number.
     /// </summary>
+    /// <param name="date">The date.</param>
+    /// <returns>True if month is even.</returns>
     public bool MonthEvenNumber (DateTime date)
     {
         return date.Month switch
@@ -37,8 +41,10 @@ public class CompareBirthday
         };
     }
     /// <summary>
-    /// Checks if the days date is an even number
+    /// Checks if day is an even number.
     /// </summary>
+    /// <param name="date">The date.</param>
+    /// <returns>True if day is even.</returns>
     public bool DayEvenNumber(DateTime date)
     {
         return date.Day switch
@@ -62,8 +68,10 @@ public class CompareBirthday
         };
     }
     /// <summary>
-    /// Checks zodiac sign
+    /// Gets the zodiac sign of a person.
     /// </summary>
+    /// <param name="person">The person.</param>
+    /// <returns>The name of the sign.</returns>
     public string GetAstroSign(Person person)
     {
         int month = person.Birthday.Month;

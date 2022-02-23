@@ -6,7 +6,7 @@ public class CompareAge
     /// </summary>
     /// <param name="age1">Age of the first person.</param>
     /// <param name="age2">Age of the second person.</param>
-    /// <returns></returns>
+    /// <returns>Age difference.</returns>
     public int AgeDifference(int age1, int age2)
     {
         return age1 < age2 ? age2 - age1 :age1 - age2;
@@ -24,7 +24,6 @@ public class CompareAge
         return age > 17;
     }
 
-    //jämna eller ojämna nummer
     /// <summary>
     /// Determines whether the age is even or odd number.
     /// </summary>
