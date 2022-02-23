@@ -36,24 +36,39 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
             counter.GivePersonScore(person1, person2);
 
             var actual = TotalScore.Total;
-
             var expected = 75;
 
             Assert.AreEqual(expected, actual);
         }
 
-
         [TestMethod()]
         public void NameScoreTest()
         {
+            string name1 = "";
+            string name2 = "";
 
-            Assert.Fail();
+            ScoreCounter test = new();
+            test.NameScore(name1, name2);
+
+            var actual = TotalScore.Total;
+            var expected = 0;
+
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod()]
         public void BirthdayScoreTest()
         {
-            Assert.Fail();
+            var date1 = new DateTime(1975, 06, 04);
+            var date2 = new DateTime(1963, 12, 18);
+
+            ScoreCounter test = new();
+            test.BirthdayScore(date1, date2);
+
+            var actual = TotalScore.Total;
+            var expected = 0;
+
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod()]
@@ -66,7 +81,6 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
             test.AgeScore(age1, age2);
 
             var actual = TotalScore.Total;
-
             var expected = 75;
 
             Assert.AreEqual(expected, actual);
