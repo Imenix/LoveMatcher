@@ -161,28 +161,47 @@ namespace LoveMatcher.Helper.ScoreCounter
         {
             return 0;
         }
+        /// <summary>
+        /// Compares difference in months score.
+        /// </summary>
+        /// <param name="diff">The difference.</param>
         public void CompareMonthScore(int diff)
         {
             if (diff <= 4) totalScore.AddToTotal(10);
             else if (diff > 4 && diff <= 8) totalScore.AddToTotal(0);
             else totalScore.SubstractFromTotal(5);
         }
+        /// <summary>
+        /// Compares difference in Days score.
+        /// </summary>
+        /// <param name="diff">The difference.</param>
         public void CompareDayScore(int diff)
         {
             if (diff <= 10) totalScore.AddToTotal(10);
             else if (diff > 10 && diff <= 20) totalScore.AddToTotal(0);
             else totalScore.SubstractFromTotal(5);
         }
+        /// <summary>
+        /// Monthes the even number score.
+        /// </summary>
         public void MonthEvenNumberScore(bool person1, bool person2)
         {
             if ((person1 && person2) || (!person1 && !person2)) totalScore.AddToTotal(10);
             else totalScore.SubstractFromTotal(5);
         }
+        /// <summary>
+        /// Days the even number score.
+        /// </summary>
         public void DayEvenNumberScore(bool person1, bool person2)
         {
             if ((person1 && person2) || (!person1 && !person2)) totalScore.AddToTotal(10);
             else totalScore.SubstractFromTotal(5);
         }
+        /// <summary>
+        /// Gets the zodiac sign score.
+        /// </summary>
+        /// <param name="zodiac1">The zodiac1.</param>
+        /// <param name="zodiac2">The zodiac2.</param>
         public void GetZodiacSignScore(string zodiac1, string zodiac2)
         {
             GetZodiacElement(zodiac1);
@@ -192,6 +211,10 @@ namespace LoveMatcher.Helper.ScoreCounter
             else totalScore.SubstractFromTotal(0);
 
         }
+        /// <summary>
+        /// Gets the zodiac element.
+        /// </summary>
+        /// <param name="element">The element.</param>
         private void GetZodiacElement(string element)
         {
             if (element == "Aries" || element == "Leo" || element == "Saggitarius") element = "Fire";
