@@ -155,7 +155,6 @@ namespace LoveMatcher.Helper.ScoreCounter
                 return totalScore.AddToTotal(5);
             }
             else { return 0; };
-            
         }
 
     }

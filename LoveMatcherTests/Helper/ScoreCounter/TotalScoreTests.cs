@@ -20,7 +20,6 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
             TotalScore test = new();
             test.AddToTotal(oldScore);
             var actual = test.AddToTotal(newScore);
-            
 
             var expected = 15;
 
