@@ -30,7 +30,7 @@ public static class InputCheck
     /// <returns>True or false.</returns>
     public static bool CheckLetters(string input)  //https://stackoverflow.com/a/34264342
     {
-        if (input.All(c => c.Equals(' ')) || input.All(c => c.Equals('-'))) return false;
+        if (input.All(c => c.Equals(' ')) || input.All(c => c.Equals('-') || c.Equals(' '))) return false;
         else return input.All(c => char.IsLetter(c) || c.Equals('-') || c.Equals(' '));
     }
     public static void CheckCursorPosition() //https://stackoverflow.com/q/6723755  funkar nästan felfritt. ska nog kolla igenom den mer noga sen.

@@ -53,6 +53,7 @@ namespace Tests
         [DataRow(" ")]
         [DataRow("")]
         [DataRow("-")]
+        [DataRow("- - -")]
         [DataRow("123")]
         public void CheckLettersTest_Denied(string input)
         {
