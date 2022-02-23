@@ -93,6 +93,5 @@ namespace LoveMatcher.Helper.ScoreCounter
         {
             return 0;
         }
-
     }
 }
