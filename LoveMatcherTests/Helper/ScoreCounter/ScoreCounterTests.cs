@@ -12,7 +12,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
     public class ScoreCounterTests
     {
         [TestMethod()]
-        public void PersonScoreTest()
+        public void GivePersonScoreTest()
         {
             // Person 1 -----------------------------------------
             Person person1 = new();

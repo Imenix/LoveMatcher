@@ -39,9 +39,9 @@ namespace LoveMatcher.Helper.ScoreCounter
         /// <returns></returns>
         public int IsOver17_Score(int age1, int age2)
         {
-            var ofAge1 = compare.IsOver17(age1);
-            var ofAge2 = compare.IsOver17(age2);
-            return GiveScore(ofAge1, ofAge2);
+            var oldEnough1 = compare.IsOver17(age1);
+            var oldEnough2 = compare.IsOver17(age2);
+            return GiveScore(oldEnough1, oldEnough2);
         }
 
         /// <summary>
