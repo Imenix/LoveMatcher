@@ -21,7 +21,6 @@
         Draw(Assets.InputBox(name2, age2), 51, inputBoxHeight);
         DrawEmptyBar(barLength, leftPos, topPos);
         CursorStartPos(name1, age1, name2, age2);
-        //InputCheck.CheckCursorPosition();
     }
 
     /// <summary>

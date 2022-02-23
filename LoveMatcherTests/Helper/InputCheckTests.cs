@@ -43,11 +43,21 @@ namespace Tests
         [DataRow("Abc")]
         [DataRow("A b c")]
         [DataRow("a-b-c")]
-        [DataRow("-")]
 
-        public void CheckLettersTest(string input)
+        public void CheckLettersTest_Accepted(string input)
         {
             Assert.IsTrue(InputCheck.CheckLetters(input));
+        }
+
+        [TestMethod()]
+        [DataRow(" ")]
+        [DataRow("")]
+        [DataRow("-")]
+        [DataRow("- - -")]
+        [DataRow("123")]
+        public void CheckLettersTest_Denied(string input)
+        {
+            Assert.IsFalse(InputCheck.CheckLetters(input));
         }
         #endregion
 

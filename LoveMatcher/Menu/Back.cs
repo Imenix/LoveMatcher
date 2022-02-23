@@ -71,8 +71,7 @@ public static class Back
         person2.Birthday = Converting.ToExactDateTime(age2);
         #endregion
 
-
-        // här ska allt alängas in o jämföras.
+        // <-- här ska allt slängas in o jämföras.
 
         result = 0; // resultatet får värdet efter alla tester
         Console.Clear();
