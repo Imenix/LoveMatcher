@@ -75,9 +75,15 @@ namespace LoveMatcher.Helper.ScoreCounter
             }
         }
 
-        public int LengthName_Score(Person person1, Person person2)
+        /// <summary>
+        /// Length the name score.
+        /// </summary>
+        /// <param name="person1">The person1.</param>
+        /// <param name="person2">The person2.</param>
+        /// <returns></returns>
+        public int LengthName_Score(string person1, string person2)
         {
-            var totalLength = cn.LengthName(person1.Name)+ cn.LengthName(person2.Name);
+            var totalLength = cn.LengthName(person1)+ cn.LengthName(person2);
             if (totalLength < 11)
             {
                 return totalScore.AddToTotal(5);
@@ -95,20 +101,26 @@ namespace LoveMatcher.Helper.ScoreCounter
                 return totalScore.AddToTotal(0);
             }
         }
-        public int LengthIsEven_Score(Person person1, Person person2)
+        /// <summary>
+        /// Lengthes the is even score.
+        /// </summary>
+        /// <param name="person1">The person1.</param>
+        /// <param name="person2">The person2.</param>
+        /// <returns></returns>
+        public int LengthIsEven_Score(string person1, string person2)
         {
-            var isEven1 = (cn.LengthIsEven(person1.Name));
-            var isEven2 = (cn.LengthIsEven(person2.Name));
+            var isEven1 = cn.LengthIsEven(person1);
+            var isEven2 = cn.LengthIsEven(person2);
 
             if (isEven1 && isEven2)
             {
                 return totalScore.AddToTotal(10);
             }
-            else if ((!isEven1 && isEven2) || (!isEven2 || isEven1))
+            else if ((!isEven1 && isEven2) || (!isEven2 && isEven1))
             {
                 return totalScore.AddToTotal(5);
             }
-            else { return 0; };
+            else return totalScore.AddToTotal(0);
         }
         public int NumberOfVowels_Score(Person person1, Person person2)
         {
@@ -155,7 +167,7 @@ namespace LoveMatcher.Helper.ScoreCounter
             {
                 return totalScore.AddToTotal(5);
             }
-            else { return 0; };   
+            else { return 0; };
         }
         public int NumberOfSameLettersScore()
         {

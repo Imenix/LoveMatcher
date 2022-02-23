@@ -107,15 +107,14 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod()]
-        public void LengthIsEven_ScoreTest_TrueAndFalse()
+        [DataRow("Hugh","Adam", 60)]
+        [DataRow("Jonas","Jordi", 50)]
+        [DataRow("Jon","Adam", 55)]
+        public void LengthIsEven_ScoreTest_TrueAndFalse(string name1, string name2, int expected)
         {
-            var age1 = 25;
-            var age2 = 34;
-
             ScoreGiver test = new();
-            var actual = test.AgeIsEvenNumber_Score(age1, age2);
+            var actual = test.LengthIsEven_Score(name1, name2);
 
-            var expected = 45;
 
             Assert.AreEqual(expected, actual);
         }
