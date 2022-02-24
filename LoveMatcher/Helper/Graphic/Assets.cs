@@ -70,6 +70,23 @@ internal static class Assets
         };
     }
 
+    internal static void MainMenuText()
+    {
+        Box.ThinBorder(new string[]
+        {"Choose an option",
+        "[1] Start comparing",
+        "[esc] Exit",
+        });
+    }
+
+    internal static void CompareAgainText()
+    {
+        Box.ThinBorder(new string[]
+        {"Compare again?",
+        "[1] Yes, compare again!",
+        "[esc] No, exit the program."});
+    }
+
     /// <summary>
     /// Adds a string with the amount of chars needed to reach a "wall" in the graphic box.
     /// This is so that the boxes will stay the same size regardless of what length the names are.

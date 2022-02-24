@@ -14,7 +14,7 @@
         const int topPos = 9;
         const int inputBoxHeight = 4;
 
-        Box.ThinBorder(new string[] {"Write the first names and ages of the ones you want to compare"}, 10,0);
+        Box.ThinBorder(new string[] { "Write the first names (letters and - allowed) and ages (1-100) of the ones you want to compare" }, 0,0);
 
         Draw(Assets.InputBox(name1, age1), 0, inputBoxHeight);
         Draw(Assets.Heart, 37, 3, "Red");
