@@ -1,5 +1,4 @@
-namespace LoveMatcher.Helper.Comparing
-{
+
     public class CompareName
     {
         /// <summary>
@@ -64,4 +63,3 @@ namespace LoveMatcher.Helper.Comparing
             return point;
         }
     }
-}
