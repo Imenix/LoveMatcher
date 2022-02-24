@@ -18,6 +18,7 @@ public static class Back
                 break;
 
             default:
+                Console.Clear();
                 MainMenu();
                 break;
         }
