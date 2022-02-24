@@ -84,6 +84,5 @@ namespace Tests
             Assert.IsFalse(InputCheck.CheckAge(birth));
         }
         #endregion
-
     }
 }

@@ -2,7 +2,7 @@ public static class Back
 {
     public static void MainMenu()
     {
-        Front.MainMenuText();
+        Assets.MainMenuText();
         var choice = Console.ReadKey();
         Console.Clear();
         switch (choice.Key)
@@ -31,12 +31,20 @@ public static class Back
         string name2;
         string age2;
         int result;
+        bool error = false;
 
         #region Person1
         do
         {
             MenuGraphics.CompareMenuGraphics();
             name1 = Console.ReadLine();
+
+            if (!InputCheck.CheckLetters(name1))
+            {
+                Console.WriteLine("bababoey");
+                Environment.Exit(0);
+            }
+
         } while (!InputCheck.CheckLetters(name1));
 
         person1.Name = Converting.ToCleanName(name1);
@@ -46,7 +54,8 @@ public static class Back
             Console.Clear();
             MenuGraphics.CompareMenuGraphics(name1);
             age1 = Console.ReadLine();
-        } while (!InputCheck.CheckDateTimeFormat(age1) && InputCheck.CheckAge(age1));
+
+        } while (!InputCheck.CheckDateTimeFormat(age1) || !InputCheck.CheckAge(age1));
 
         person1.Birthday = Converting.ToExactDateTime(age1);
         #endregion
@@ -66,14 +75,14 @@ public static class Back
             Console.Clear();
             MenuGraphics.CompareMenuGraphics(name1, age1, name2);
             age2 = Console.ReadLine();
-        } while (!InputCheck.CheckDateTimeFormat(age2) && InputCheck.CheckAge(age2));
+        } while (!InputCheck.CheckDateTimeFormat(age2) || !InputCheck.CheckAge(age2));
 
         person2.Birthday = Converting.ToExactDateTime(age2);
         #endregion
 
         // <-- här ska allt slängas in o jämföras.
 
-        result = 0; // resultatet får värdet efter alla tester
+        result = 50; // resultatet får värdet efter alla tester
         Console.Clear();
         MenuGraphics.CompareMenuGraphics(name1, age1, name2, age2);
         MenuGraphics.FillBar(result, 50, 17, 9);
@@ -87,7 +96,7 @@ public static class Back
     public static void CompareAgainMenu()
     {
         Console.SetCursorPosition(0, 0);
-        Front.CompareAgainText();
+        Assets.CompareAgainText();
         var choice = Console.ReadKey();
         switch (choice.Key)
         {
