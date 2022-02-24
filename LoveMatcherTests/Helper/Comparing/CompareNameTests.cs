@@ -17,13 +17,13 @@ namespace LoveMatcher.Helper.Comparing.Tests
         /// <param name="expected">The expected.</param>
         /// <param name="name">The name.</param>
         [TestMethod()]
-        [DataRow(4, "Joel")]
-        [DataRow(6, "Mikael")]
-        [DataRow(13, "AmadeusMozart")]
-        public void LengthTest_Name_Fail(int expected, string name)
+        [DataRow(4, "Joel", "JoelBoel")]
+        [DataRow(2, "Mikael", "Mike")]
+        [DataRow(0, "Mike", "Mike")]
+        public void LengthDiffrenceTest_Name_AreEqual(int expected, string name1, string name2)
         {
             CompareName n = new();
-            var result = n.LengthName(name);
+            var result = n.LengthNameDiffrence(name1, name2);
             Assert.AreEqual(expected, result);
         }
         /// <summary>

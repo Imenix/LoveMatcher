@@ -7,9 +7,9 @@ namespace LoveMatcher.Helper.Comparing
         /// </summary>
         public int LengthNameDiffrence(string name1, string name2) // Ändra till skillnaden i längd
         {
-            if (name1.Length > name2.Length) return { name1.Length - name2.Length};
-            else return { name2.Length - name1.Length};
-            return 0;
+            if (name1.Length > name2.Length) return name1.Length - name2.Length;
+            else return  name2.Length - name1.Length;
+
         }
 
         /// <summary>
