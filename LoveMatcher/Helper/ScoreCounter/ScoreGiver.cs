@@ -81,20 +81,20 @@ namespace LoveMatcher.Helper.ScoreCounter
         /// <param name="person1">The person1.</param>
         /// <param name="person2">The person2.</param>
         /// <returns></returns>
-        public int LengthName_Score(string person1, string person2)
+        public int LengthNameDiffrence_Score(string person1, string person2)
         {
-            var totalLength = cn.LengthName(person1)+ cn.LengthName(person2);
-            if (totalLength < 11)
+            var totalDiff = cn.LengthNameDiffrence(person1, person2);
+            if (totalDiff > 7)
             {
-                return totalScore.AddToTotal(5);
+                return totalScore.AddToTotal(15);
             }
-            else if (totalLength < 15)
+            else if (totalDiff > 3)
             {
                return totalScore.AddToTotal(10);
             }
-            else if (totalLength < 20)
+            else if (totalDiff > 1)
             {
-                return totalScore.AddToTotal(15);
+                return totalScore.AddToTotal(5);
             }
             else
             {
@@ -122,10 +122,16 @@ namespace LoveMatcher.Helper.ScoreCounter
             }
             else return totalScore.AddToTotal(0);
         }
-        public int NumberOfVowels_Score(Person person1, Person person2)
+        /// <summary>
+        /// Numbers the of vowels score.
+        /// </summary>
+        /// <param name="person1">The person1.</param>
+        /// <param name="person2">The person2.</param>
+        /// <returns></returns>
+        public int NumberOfVowels_Score(string person1, string person2)
         {
-            var count = cn.NumberOfVowels(person1.Name);
-            count += cn.NumberOfVowels(person2.Name);
+            var count = cn.NumberOfVowels(person1);
+            count += cn.NumberOfVowels(person2);
 
             if(count >= 10)
             {
@@ -133,11 +139,17 @@ namespace LoveMatcher.Helper.ScoreCounter
             }else if (count >= 5)
             {
                 return totalScore.AddToTotal(5);
-            }else { return 0; };
+            }
+            else { return totalScore.SubstractFromTotal(5); };
 
-            return 0;
         }
-        public int NumberOfConsonants_Score(Person person1, Person person2)
+        /// <summary>
+        /// Numbers the of consonants score.
+        /// </summary>
+        /// <param name="person1">The person1.</param>
+        /// <param name="person2">The person2.</param>
+        /// <returns></returns>
+        public int NumberOfConsonants_Score(string person1, string person2)
         {
             var count = cn.NumberOfConsonants(person1.Name);
             count += cn.NumberOfConsonants(person2.Name);
@@ -156,9 +168,15 @@ namespace LoveMatcher.Helper.ScoreCounter
             };
 
         }
-        public int NumberOfSameLetters_Score(Person person1, Person person2)
+        /// <summary>
+        /// Numbers the of same letters score.
+        /// </summary>
+        /// <param name="person1">The person1.</param>
+        /// <param name="person2">The person2.</param>
+        /// <returns></returns>
+        public int NumberOfSameLetters_Score(string person1, string person2)
         {
-            var counter = cn.NumberOfSameLetters(person1.Name, person2.Name);
+            var counter = cn.NumberOfSameLetters(person1, person2);
 
             if(counter >= 5)
             {
@@ -167,12 +185,9 @@ namespace LoveMatcher.Helper.ScoreCounter
             {
                 return totalScore.AddToTotal(5);
             }
-            else { return 0; };
+            else { return totalScore.SubstractFromTotal(5); };
         }
-        public int NumberOfSameLettersScore()
-        {
-            return 0;
-        }
+
         public void CompareMonthScore(int diff)
         {
             if (diff <= 4) totalScore.AddToTotal(10);

@@ -107,6 +107,17 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod()]
+        [DataRow("Hugh", "Adam", 50)]
+        [DataRow("Rockson", "John", 55)]
+        [DataRow("Jo", "Adamsonslongesstname", 65)]
+        public void LengthDiffrenceName_Succesful(string name1, string name2, int expected)
+        {
+            ScoreGiver test = new();
+            var actual = test.LengthNameDiffrence_Score(name1, name2);
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod()]
         [DataRow("Hugh","Adam", 60)]
         [DataRow("Jonas","Jordi", 50)]
         [DataRow("Jon","Adam", 55)]
@@ -118,5 +129,40 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
 
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod()]
+        [DataRow("Adamthemadam", "JohnTheBonLononona", 60)]
+        [DataRow("Jonas", "Jordiii", 55)]
+        [DataRow("Jo", "Di", 45)]
+        public void NumberOfVowels_Score_Test_Successful(string name1, string name2, int expected)
+        {
+            ScoreGiver test = new();
+            var actual = test.NumberOfVowels_Score(name1, name2);
+
+            Assert.AreEqual(expected,actual);
+        }
+        [TestMethod()]
+        [DataRow("Johanathemamama", "JohnTheBonLononona", 60)]
+        [DataRow("Helmut", "Santana", 55)]
+        [DataRow("Go", "Wi", 45)]
+        public void NumberOfConsonants_Score_Test_Successful(string name1, string name2, int expected)
+        {
+            ScoreGiver test = new();
+            var actual = test.NumberOfVowels_Score(name1, name2);
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod()]
+        [DataRow("Amanda The Panda", "Amanda The Panda", 60)]
+        [DataRow("Jonas", "Jon", 55)]
+        [DataRow("Helmut", "Anna", 45)]
+        public void NumberOfSameLetters_Score_Test_Successful(string name1, string name2, int expected)
+        {
+            ScoreGiver sut = new();
+            var actual = sut.NumberOfSameLetters_Score(name1, name2);
+
+
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
