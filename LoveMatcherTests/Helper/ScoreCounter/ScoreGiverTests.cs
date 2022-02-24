@@ -160,7 +160,8 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [DataRow("Aries", "Libra", 60)]
         [DataRow("Libra", "Aries", 60)]
         [DataRow("Virgo", "", 60)]
-        [DataRow()]
+        [DataRow("", "virgo", 60)]
+        [DataRow("Leo", "Taurus", 50)]
         public void GetZodiacSignScoreTest(string zodiac1, string zodiac2, int expected)
         {
             ScoreGiver score = new();
