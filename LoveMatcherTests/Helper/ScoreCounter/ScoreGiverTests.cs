@@ -106,5 +106,68 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
 
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod()]
+        [DataRow(5, 50)]
+        [DataRow(2, 60)]
+        [DataRow(10, 45)]
+        public void MonthEvenNumberScoreTest(int diff, int expected)
+        {
+            ScoreGiver score = new();
+
+            var result = score.CompareMonthScore(diff);
+
+            Assert.AreEqual(expected, result);
+        }
+        [TestMethod()]
+        [DataRow(5, 60)]
+        [DataRow(15, 50)]
+        [DataRow(25, 45)]
+        public void DayEvenNumberScoreTest(int diff, int expected)
+        {
+            ScoreGiver score = new();
+
+            var result = score.CompareDayScore(diff);
+
+            Assert.AreEqual(expected, result);
+        }
+        [TestMethod()]
+        [DataRow(true, true, 60)]
+        [DataRow(true, false, 45)]
+        [DataRow(false, false, 60)]
+        [DataRow(false, true, 45)]
+        public void MonthEvenNumberScore(bool person1, bool person2, int expected)
+        {
+            ScoreGiver test = new();
+
+            var result = test.MonthEvenNumberScore(person1, person2);
+
+            Assert.AreEqual(expected, result);
+        }
+        [TestMethod()]
+        [DataRow(true, true, 60)]
+        [DataRow(true, false, 45)]
+        [DataRow(false, false, 60)]
+        [DataRow(false, true, 45)]
+        public void DayEvenNumberScore(bool person1, bool person2, int expected)
+        {
+            ScoreGiver test = new();
+
+            var result = test.DayEvenNumberScore(person1, person2);
+
+            Assert.AreEqual(expected, result);
+        }
+        [TestMethod()]
+        [DataRow("Aries", "Libra", 60)]
+        [DataRow("Libra", "Aries", 60)]
+        [DataRow("Virgo", "", 60)]
+        [DataRow()]
+        public void GetZodiacSignScoreTest(string zodiac1, string zodiac2, int expected)
+        {
+            ScoreGiver score = new();
+
+            var result = score.GetZodiacSignScore(zodiac1, zodiac2);
+
+            Assert.AreEqual(expected, result);
+        }
     }
 }

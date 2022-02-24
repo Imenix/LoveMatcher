@@ -1,5 +1,4 @@
-namespace LoveMatcher.Helper.Comparing
-{
+
     public class CompareName
     {
         //skillnad på längd
@@ -70,4 +69,3 @@ namespace LoveMatcher.Helper.Comparing
             return point;
         }
     }
-}
