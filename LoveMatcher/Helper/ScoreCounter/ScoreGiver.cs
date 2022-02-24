@@ -12,6 +12,8 @@ namespace LoveMatcher.Helper.ScoreCounter
         CompareName cn = new();
         TotalScore totalScore = new();
 
+        //static int TotalTotalScore { get; set; } = totalScore;
+
         /// <summary>
         /// Checks difference in age and gives or takes points accordingly
         /// </summary>
@@ -192,8 +194,6 @@ namespace LoveMatcher.Helper.ScoreCounter
         /// </summary>
         /// <param name="diff">The difference.</param>
         public int CompareMonthScore(int diff)
-
-        public void CompareMonthScore(int diff)
         {
             if (diff < 5) return totalScore.AddToTotal(10);
             else if (diff > 4 && diff < 9) return totalScore.AddToTotal(0);

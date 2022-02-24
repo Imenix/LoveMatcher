@@ -36,7 +36,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
             counter.GivePersonScore(person1, person2);
 
             TotalScore total = new();
-            var actual = total.Total;
+            var actual = 0;
 
             var expected = 75;
 
@@ -53,7 +53,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
             test.NameScore(name1, name2);
 
             TotalScore total = new();
-            var actual = total.Total;
+            var actual = 0;
 
             var expected = 0;
 
@@ -70,7 +70,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
             test.BirthdayScore(date1, date2);
 
             TotalScore total = new();
-            var actual = total.Total;
+            var actual = 0;
 
             var expected = 0;
 
@@ -87,8 +87,8 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
 
             ScoreCounter test = new();
             test.AgeScore(age1, age2);
-           
-            var actual = total.Total;
+
+            var actual = 0;
 
             var expected = 75;
 
@@ -103,7 +103,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
 
             //TotalScore total = new();
 
-            ScoreCounter test = new();            
+            ScoreCounter test = new();
             test.AgeScore(age1, age2);
 
             var actual = 0;

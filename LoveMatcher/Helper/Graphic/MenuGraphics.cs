@@ -175,8 +175,8 @@
     private static void CursorStartPos(string name1 = "", string age1 = "", string name2 = "", string age2 = "")
     {
         if (name1?.Length == 0) Console.SetCursorPosition(8, 5);
-        else if (age1?.Length == 0) Console.SetCursorPosition(17, 6);
+        else if (age1?.Length == 0) Console.SetCursorPosition(19, 6);
         else if (name2?.Length == 0) Console.SetCursorPosition(59, 5);
-        else if (age2?.Length == 0) Console.SetCursorPosition(68, 6);
+        else if (age2?.Length == 0) Console.SetCursorPosition(70, 6);
     }
 }

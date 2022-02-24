@@ -8,11 +8,9 @@ namespace LoveMatcher.Helper.ScoreCounter
 {
     public class TotalScore
     {
-        public int Total { get; set; } = 50;
-   
-        public int Total { get; set; } = 50;
+        public static int Total { get; set; } = 50;
 
-        //lagrar totala poäng        
+        //lagrar totala poäng
         /// <summary>
         /// Adds to the total score.
         /// </summary>

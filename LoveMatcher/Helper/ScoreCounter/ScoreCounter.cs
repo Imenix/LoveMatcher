@@ -29,6 +29,7 @@ namespace LoveMatcher.Helper.ScoreCounter
             NameScore(name1, name2);
             BirthdayScore(bd1, bd2);
             AgeScore(age1,age2);
+
         }
 
         /// <summary>

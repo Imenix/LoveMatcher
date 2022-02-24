@@ -1,3 +1,5 @@
+using LoveMatcher.Helper.ScoreCounter;
+
 public static class Back
 {
     public static void MainMenu()
@@ -23,6 +25,7 @@ public static class Back
 
     private static void CompareMenu()
     {
+        TotalScore.Total = 50;
         Person person1 = new();
         Person person2 = new();
 
@@ -31,6 +34,8 @@ public static class Back
         string name2;
         string age2;
         int result;
+        int percent;
+        int match;
 
         #region Person1
         do
@@ -71,13 +76,17 @@ public static class Back
         person2.Birthday = Converting.ToExactDateTime(age2);
         #endregion
 
-        // <-- här ska allt slängas in o jämföras.
+        ScoreCounter sc = new();
+        sc.GivePersonScore(person1, person2);// <-- här ska allt slängas in o jämföras.
 
-        result = 0; // resultatet får värdet efter alla tester
+        result = TotalScore.Total; // resultatet får värdet efter alla tester
+        percent = result / 180;
+        match = percent * 100;
+
         Console.Clear();
         MenuGraphics.CompareMenuGraphics(name1, age1, name2, age2);
         MenuGraphics.FillBar(result, 50, 17, 9);
-        MenuGraphics.HeartBasedOnResult(result);
+        MenuGraphics.HeartBasedOnResult(match);
         Console.ReadKey();
         Console.Clear();
 

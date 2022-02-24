@@ -47,9 +47,9 @@ internal static class Assets
     {
         return new string[]
         {
-             "┌─┴─┐",
-            $"│{result}{AddChars(result.ToString(),3,' ')}│",
-             "└───┘"
+             "┌─┴──┐",
+            $"│{result}{AddChars(result.ToString(),3,' ')}%│",
+             "└────┘"
         };
     }
 
@@ -65,7 +65,7 @@ internal static class Assets
         {
             "┌──────────────────────────────────┐",
            $"│ Name: {name}{AddChars(name, 27,' ')}│",
-           $"│ Age(yyy/mm/dd: {age}{AddChars(age, 18,' ')}│",
+           $"│ Age(yyyy/mm/dd): {age}{AddChars(age, 16,' ')}│",
             "└──────────────────────────────────┘"
         };
     }
