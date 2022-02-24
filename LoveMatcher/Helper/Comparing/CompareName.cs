@@ -9,7 +9,6 @@ namespace LoveMatcher.Helper.Comparing
         {
             if (name1.Length > name2.Length) return name1.Length - name2.Length;
             else return  name2.Length - name1.Length;
-
         }
 
         /// <summary>
@@ -62,7 +61,6 @@ namespace LoveMatcher.Helper.Comparing
                     point++;
                 }
             }
-            //Contains
             return point;
         }
     }
