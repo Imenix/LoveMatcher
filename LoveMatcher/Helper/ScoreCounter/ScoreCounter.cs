@@ -39,7 +39,7 @@ namespace LoveMatcher.Helper.ScoreCounter
         /// <param name="name2">The name of the second person.</param>
         public void NameScore(string name1, string name2)
         {
-            add.LengthName_Score(name1, name2);
+            add.LengthNameDiffrence_Score(name1, name2);
             add.LengthIsEven_Score(name1, name2);
             //add.NumberOfVowels_Score(name1, name2);
             //add.NumberOfConsonants_Score(name1, name2);
