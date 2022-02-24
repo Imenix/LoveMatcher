@@ -11,7 +11,7 @@ public static class InputCheck
     {
         DateTime.TryParse(input, out DateTime birthDate);
         var age = DateTime.Today.Year - birthDate.Year;
-        return age > 0 && age < 100;
+        return age > 0 && age < 101;
     }
 
     /// <summary>
