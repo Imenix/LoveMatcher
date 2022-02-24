@@ -151,8 +151,8 @@ namespace LoveMatcher.Helper.ScoreCounter
         /// <returns></returns>
         public int NumberOfConsonants_Score(string person1, string person2)
         {
-            var count = cn.NumberOfConsonants(person1.Name);
-            count += cn.NumberOfConsonants(person2.Name);
+            var count = cn.NumberOfConsonants(person1);
+            count += cn.NumberOfConsonants(person2);
 
             if (count >= 10)
             {
