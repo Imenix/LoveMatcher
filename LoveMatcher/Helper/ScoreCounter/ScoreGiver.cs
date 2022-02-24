@@ -232,22 +232,22 @@ namespace LoveMatcher.Helper.ScoreCounter
         /// <param name="zodiac2">The zodiac2.</param>
         public int GetZodiacSignScore(string zodiac1, string zodiac2)
         {
-            GetZodiacElement(zodiac1);
-            GetZodiacElement(zodiac2);
+            zodiac1 = GetZodiacElement(zodiac1);
+            zodiac2 = GetZodiacElement(zodiac2);
             if ((zodiac1 == "Fire" && zodiac2 == "Air") || (zodiac2 == "Fire" && zodiac1 == "Air")) return totalScore.AddToTotal(10);
-            else if ((zodiac1 == "Water" && zodiac2 == "Earth") || (zodiac2 == "Earth" && zodiac1 == "Water")) return totalScore.AddToTotal(10);
+            else if ((zodiac1 == "Water" && zodiac2 == "Earth") || (zodiac2 == "Water" && zodiac1 == "Earth")) return totalScore.AddToTotal(10);
             else return totalScore.SubstractFromTotal(0);
         }
         /// <summary>
         /// Gets the zodiac element.
         /// </summary>
         /// <param name="element">The element.</param>
-        private void GetZodiacElement(string element)
+        private string GetZodiacElement(string element)
         {
-            if (element == "Aries" || element == "Leo" || element == "Saggitarius") element = "Fire";
-            else if (element == "Taurus" || element == "Virgo" || element == "Capricorn") element = "Earth";
-            else if (element == "Gemini" || element == "Libra" || element == "Aquarius") element = "Air";
-            else element = "Water";
+            if (element == "Aries" || element == "Leo" || element == "Saggitarius") return element = "Fire";
+            else if (element == "Taurus" || element == "Virgo" || element == "Capricorn") return element = "Earth";
+            else if (element == "Gemini" || element == "Libra" || element == "Aquarius") return element = "Air";
+            else return element = "Water";
         }
     }
 }

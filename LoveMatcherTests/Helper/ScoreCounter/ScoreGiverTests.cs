@@ -170,6 +170,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [DataRow(10, 45)]
         public void MonthEvenNumberScoreTest(int diff, int expected)
         {
+            TotalScore.Total = 50;
             ScoreGiver score = new();
 
             var result = score.CompareMonthScore(diff);
@@ -182,6 +183,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [DataRow(25, 45)]
         public void DayEvenNumberScoreTest(int diff, int expected)
         {
+            TotalScore.Total = 50;
             ScoreGiver score = new();
 
             var result = score.CompareDayScore(diff);
@@ -195,6 +197,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [DataRow(false, true, 45)]
         public void MonthEvenNumberScore(bool person1, bool person2, int expected)
         {
+            TotalScore.Total = 50;
             ScoreGiver test = new();
 
             var result = test.MonthEvenNumberScore(person1, person2);
@@ -208,6 +211,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [DataRow(false, true, 45)]
         public void DayEvenNumberScore(bool person1, bool person2, int expected)
         {
+            TotalScore.Total = 50;
             ScoreGiver test = new();
 
             var result = test.DayEvenNumberScore(person1, person2);
@@ -217,10 +221,12 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [TestMethod()]
         [DataRow("Aries", "Libra", 60)]
         [DataRow("Libra", "Aries", 60)]
-        [DataRow("Virgo", "", 60)]
-        [DataRow()]
+        [DataRow("Virgo", "Pisces", 60)]
+        [DataRow("Pisces", "Virgo", 60)]
+        [DataRow("Leo", "Taurus", 50)]
         public void GetZodiacSignScoreTest(string zodiac1, string zodiac2, int expected)
         {
+            TotalScore.Total = 50;
             ScoreGiver score = new();
 
             var result = score.GetZodiacSignScore(zodiac1, zodiac2);
