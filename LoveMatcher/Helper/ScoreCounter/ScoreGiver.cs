@@ -9,7 +9,7 @@ namespace LoveMatcher.Helper.ScoreCounter
     public class ScoreGiver
     {
         CompareAge compare = new();
-        Comparing.CompareName cn = new();
+        CompareName cn = new();
         TotalScore totalScore = new();
 
         /// <summary>
@@ -187,38 +187,61 @@ namespace LoveMatcher.Helper.ScoreCounter
             }
             else { return totalScore.SubstractFromTotal(5); };
         }
+        /// <summary>
+        /// Compares difference in months score.
+        /// </summary>
+        /// <param name="diff">The difference.</param>
+        public int CompareMonthScore(int diff)
 
         public void CompareMonthScore(int diff)
         {
-            if (diff <= 4) totalScore.AddToTotal(10);
-            else if (diff > 4 && diff <= 8) totalScore.AddToTotal(0);
-            else totalScore.SubstractFromTotal(5);
+            if (diff < 5) return totalScore.AddToTotal(10);
+            else if (diff > 4 && diff < 9) return totalScore.AddToTotal(0);
+            else return totalScore.SubstractFromTotal(5);
         }
-        public void CompareDayScore(int diff)
+        /// <summary>
+        /// Compares difference in Days score.
+        /// </summary>
+        /// <param name="diff">The difference.</param>
+        public int CompareDayScore(int diff)
         {
-            if (diff <= 10) totalScore.AddToTotal(10);
-            else if (diff > 10 && diff <= 20) totalScore.AddToTotal(0);
-            else totalScore.SubstractFromTotal(5);
+            if (diff <= 10) return totalScore.AddToTotal(10);
+            else if (diff > 10 && diff <= 20) return totalScore.AddToTotal(0);
+            else return totalScore.SubstractFromTotal(5);
         }
-        public void MonthEvenNumberScore(bool person1, bool person2)
+        /// <summary>
+        /// Monthes the even number score.
+        /// </summary>
+        public int MonthEvenNumberScore(bool person1, bool person2)
         {
-            if ((person1 && person2) || (!person1 && !person2)) totalScore.AddToTotal(10);
-            else totalScore.SubstractFromTotal(5);
+            if ((person1 && person2) || (!person1 && !person2)) return totalScore.AddToTotal(10);
+            else return totalScore.SubstractFromTotal(5);
         }
-        public void DayEvenNumberScore(bool person1, bool person2)
+        /// <summary>
+        /// Days the even number score.
+        /// </summary>
+        public int DayEvenNumberScore(bool person1, bool person2)
         {
-            if ((person1 && person2) || (!person1 && !person2)) totalScore.AddToTotal(10);
-            else totalScore.SubstractFromTotal(5);
+            if ((person1 && person2) || (!person1 && !person2)) return totalScore.AddToTotal(10);
+            else return totalScore.SubstractFromTotal(5);
         }
-        public void GetZodiacSignScore(string zodiac1, string zodiac2)
+        /// <summary>
+        /// Gets the zodiac sign score.
+        /// </summary>
+        /// <param name="zodiac1">The zodiac1.</param>
+        /// <param name="zodiac2">The zodiac2.</param>
+        public int GetZodiacSignScore(string zodiac1, string zodiac2)
         {
             GetZodiacElement(zodiac1);
             GetZodiacElement(zodiac2);
-            if ((zodiac1 == "Fire" && zodiac2 == "Air") || (zodiac2 == "Fire" && zodiac1 == "Air")) totalScore.AddToTotal(10);
-            else if ((zodiac1 == "Water" && zodiac2 == "Earth") || (zodiac2 == "Earth" && zodiac1 == "Water")) totalScore.AddToTotal(10);
-            else totalScore.SubstractFromTotal(0);
-
+            if ((zodiac1 == "Fire" && zodiac2 == "Air") || (zodiac2 == "Fire" && zodiac1 == "Air")) return totalScore.AddToTotal(10);
+            else if ((zodiac1 == "Water" && zodiac2 == "Earth") || (zodiac2 == "Earth" && zodiac1 == "Water")) return totalScore.AddToTotal(10);
+            else return totalScore.SubstractFromTotal(0);
         }
+        /// <summary>
+        /// Gets the zodiac element.
+        /// </summary>
+        /// <param name="element">The element.</param>
         private void GetZodiacElement(string element)
         {
             if (element == "Aries" || element == "Leo" || element == "Saggitarius") element = "Fire";
