@@ -35,8 +35,12 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
             ScoreCounter counter = new();
             counter.GivePersonScore(person1, person2);
 
-            TotalScore total = new();
-            var actual = total.Total;
+
+
+            //TotalScore total = new();
+            //var actual = total.Total;
+
+            var actual = 0;
 
             var expected = 75;
 
@@ -101,12 +105,15 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
             int age1 = 46;
             int age2 = 58;
 
-            //TotalScore total = new();
+            //ScoreCounter test = new();
+            //test.AgeScore(age1, age2);
 
-            ScoreCounter test = new();            
-            test.AgeScore(age1, age2);
+            ScoreGiver giver = new();
+            giver.AgeDifference_Score(age1, age2);
+            giver.IsOver17_Score(age1, age2);
+            var ageisEven = giver.AgeIsEvenNumber_Score(age1, age2);
 
-            var actual = 0;
+            var actual = ageisEven;
 
             var expected = 75;
 
