@@ -43,7 +43,7 @@ internal static class Assets
     /// </summary>
     /// <param name="result">The result.</param>
     /// <returns>A box with the result in it.</returns>
-    internal static string[] PercentBox(int result)
+    internal static string[] PercentBox(double result)
     {
         return new string[]
         {

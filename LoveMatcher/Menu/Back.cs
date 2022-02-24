@@ -33,9 +33,9 @@ public static class Back
         string age1;
         string name2;
         string age2;
-        int result;
-        int percent;
-        int match;
+        double result;
+        double percent;
+        double match;
 
         #region Person1
         do
@@ -90,12 +90,12 @@ public static class Back
         result = TotalScore.Total; // resultatet får värdet efter alla tester
         percent = result / 180;
         match = percent * 100;
+        double match2 = (double)Math.Round(match, 0);
 
-        result = 0; // resultatet får värdet efter alla tester
         Console.Clear();
         MenuGraphics.CompareMenuGraphics(name1, age1, name2, age2);
-        MenuGraphics.FillBar(result, 50, 17, 9);
-        MenuGraphics.HeartBasedOnResult(match);
+        MenuGraphics.FillBar(match2, 50, 17, 9);
+        MenuGraphics.HeartBasedOnResult(match2);
         Console.ReadKey();
         Console.Clear();
 

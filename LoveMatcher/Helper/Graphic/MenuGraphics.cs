@@ -49,12 +49,12 @@
     /// <param name="barLength">Length of the bar.</param>
     /// <param name="left">Cursor position left.</param>
     /// <param name="top">Cursor position top.</param>
-    public static void FillBar(int result, int barLength, int left = 0, int top = 0)
+    public static void FillBar(double result, int barLength, int left = 0, int top = 0)
     {
         int speed = 10;
         int heartSprite = 1;
         (int l, int t) pos = (left+1,top+1);
-        Console.SetCursorPosition(pos.l,pos.t); //so the filled bar begins inside the bar     
+        Console.SetCursorPosition(pos.l,pos.t); //so the filled bar begins inside the bar
 
         Console.ForegroundColor = ConsoleColor.Red;
         for (int i = 0; i < barLength; i++)
@@ -111,7 +111,7 @@
     /// Draws a heart based on the result. The higher the score the more filled the heart is.
     /// </summary>
     /// <param name="result">The result.</param>
-    public static void HeartBasedOnResult(int result)
+    public static void HeartBasedOnResult(double result)
     {
         int[] pos = { 37, 3 };
         if (result is < 25 and > 0)
