@@ -5,10 +5,11 @@ namespace LoveMatcher.Helper.Comparing
         /// <summary>
         /// Calculates the difference between lenght of the names
         /// </summary>
-        public int LengthName(string name) // Ändra till skillnaden i längd
+        public int LengthNameDiffrence(string name1, string name2) // Ändra till skillnaden i längd
         {
-            var nameLength = name.Length;
-            return nameLength; 
+            if (name1.Length > name2.Length) return { name1.Length - name2.Length};
+            else return { name2.Length - name1.Length};
+            return 0;
         }
 
         /// <summary>
