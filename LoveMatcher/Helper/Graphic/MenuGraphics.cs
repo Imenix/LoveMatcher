@@ -72,7 +72,6 @@
                     Console.ForegroundColor = ConsoleColor.Red;
                 }
             }
-
             Console.ResetColor();
             Draw(Assets.PercentBox(result), pos.l - 3, pos.t + 2);
         }
