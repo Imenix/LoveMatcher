@@ -17,13 +17,13 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         {
             TotalScore.Total = 50;
 
-            var age1 = 35;
-            var age2 = 35;
+            const int age1 = 35;
+            const int age2 = 35;
 
             ScoreGiver test = new();
             var actual = test.AgeDifference_Score(age1, age2);
 
-            var expected = 65;
+            const int expected = 65;
 
             Assert.AreEqual(expected, actual);
         }
@@ -33,13 +33,13 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         {
             TotalScore.Total = 50;
 
-            var age1 = 88;
-            var age2 = 92;
+            const int age1 = 88;
+            const int age2 = 92;
 
             ScoreGiver test = new();
             var actual = test.AgeDifference_Score(age1, age2);
 
-            var expected = 60;
+            const int expected = 60;
 
             Assert.AreEqual(expected, actual);
         }
@@ -65,13 +65,13 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         {
             TotalScore.Total = 50;
 
-            var age1 = 20;
-            var age2 = 60;
+            const int age1 = 20;
+            const int age2 = 60;
 
             ScoreGiver test = new();
             var actual = test.AgeDifference_Score(age1, age2);
 
-            var expected = 45;
+            const int expected = 45;
 
             Assert.AreEqual(expected, actual);
         }
@@ -86,7 +86,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
             ScoreGiver test = new();
             var actual = test.IsOver17_Score(age1, age2);
 
-            var expected = 60;
+            const int expected = 60;
 
             Assert.AreEqual(expected, actual);
         }
@@ -101,7 +101,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
             ScoreGiver test = new();
             var actual = test.AgeIsEvenNumber_Score(age1, age2);
 
-            var expected = 60;
+            const int expected = 60;
 
             Assert.AreEqual(expected, actual);
         }
@@ -109,15 +109,13 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [TestMethod()]
         public void AgeIsEvenNumber_ScoreTest_TrueAndFalse()
         {
-            TotalScore.Total = 50;
-
-            var age1 = 25;
-            var age2 = 34;
+            const int age1 = 25;
+            const int age2 = 34;
 
             ScoreGiver test = new();
             var actual = test.AgeIsEvenNumber_Score(age1, age2);
 
-            var expected = 45;
+            const int expected = 45;
 
             Assert.AreEqual(expected, actual);
         }
@@ -143,12 +141,10 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [DataRow("Jon","Adam", 55)]
         public void LengthIsEven_ScoreTest_TrueAndFalse(string name1, string name2, int expected)
         {
-
             TotalScore.Total = 50;
 
             ScoreGiver test = new();
             var actual = test.LengthIsEven_Score(name1, name2);
-
 
             Assert.AreEqual(expected, actual);
         }

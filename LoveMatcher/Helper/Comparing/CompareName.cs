@@ -49,17 +49,9 @@ namespace LoveMatcher
         /// <returns>The amount of duplicate letters.</returns>
         public int NumberOfSameLetters(string nameA, string nameB)
         {
-            var point = 0;
-
+        var point = 0;
             char[] charArray = nameA.ToCharArray();
-            for (int i = 0; i < charArray.Length; i++)
-            {
-                bool check = nameB.Contains(charArray[i]);
-                if (check)
-                {
-                    point++;
-                }
-            }
+        for (int i = 0; i < charArray.Length; i++) { bool check = nameB.Contains(charArray[i]); if (check) { point++; } }
             return point;
         }
     }

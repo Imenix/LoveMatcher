@@ -16,22 +16,10 @@
         public int LengthNameDiffrence_Score(string person1, string person2)
         {
             var totalDiff = cn.LengthNameDiffrence(person1, person2);
-            if (totalDiff > 7)
-            {
-                return totalScore.AddToTotal(15);
-            }
-            else if (totalDiff > 3)
-            {
-               return totalScore.AddToTotal(10);
-            }
-            else if (totalDiff > 1)
-            {
-                return totalScore.AddToTotal(5);
-            }
-            else
-            {
-                return totalScore.AddToTotal(0);
-            }
+            if (totalDiff > 7) return totalScore.AddToTotal(15);
+            else if (totalDiff > 3) return totalScore.AddToTotal(10);
+            else if (totalDiff > 1) return totalScore.AddToTotal(5);
+            else return totalScore.AddToTotal(0);
         }
         /// <summary>
         /// Lengthes the is even score.
@@ -44,14 +32,8 @@
             var isEven1 = cn.LengthIsEven(person1);
             var isEven2 = cn.LengthIsEven(person2);
 
-            if (isEven1 && isEven2)
-            {
-                return totalScore.AddToTotal(10);
-            }
-            else if ((!isEven1 && isEven2) || (!isEven2 && isEven1))
-            {
-                return totalScore.AddToTotal(5);
-            }
+            if (isEven1 && isEven2) return totalScore.AddToTotal(10);
+            else if (isEven1 ^ isEven2) return totalScore.AddToTotal(5);
             else return totalScore.AddToTotal(0);
         }
         /// <summary>
@@ -65,14 +47,9 @@
             var count = cn.NumberOfVowels(person1);
             count += cn.NumberOfVowels(person2);
 
-            if(count >= 10)
-            {
-                return totalScore.AddToTotal(10);
-            }else if (count >= 5)
-            {
-                return totalScore.AddToTotal(5);
-            }
-            else { return totalScore.SubstractFromTotal(5); };
+            if(count >= 10) return totalScore.AddToTotal(10);
+            else if (count >= 5) return totalScore.AddToTotal(5);
+            else return totalScore.SubstractFromTotal(5);
 
         }
         /// <summary>
@@ -86,19 +63,9 @@
             var count = cn.NumberOfConsonants(person1);
             count += cn.NumberOfConsonants(person2);
 
-            if (count >= 10)
-            {
-                return totalScore.AddToTotal(10);
-            }
-            else if (count >= 5)
-            {
-                return totalScore.AddToTotal(5);
-            }
-            else
-            {
-               return totalScore.SubstractFromTotal(5);
-            };
-
+            if (count >= 10) return totalScore.AddToTotal(10);
+            else if (count >= 5) return totalScore.AddToTotal(5);
+            else return totalScore.SubstractFromTotal(5);
         }
         /// <summary>
         /// Numbers the of same letters score.
@@ -110,14 +77,9 @@
         {
             var counter = cn.NumberOfSameLetters(person1, person2);
 
-            if(counter >= 5)
-            {
-                return totalScore.AddToTotal(10);
-            }else if (counter >= 3)
-            {
-                return totalScore.AddToTotal(5);
-            }
-            else return totalScore.SubstractFromTotal(5);
+            if(counter >= 5) return totalScore.AddToTotal(10);
+            else if (counter >= 3) return totalScore.AddToTotal(5);
+            else { return totalScore.SubstractFromTotal(5); };
         }
         #endregion
 
