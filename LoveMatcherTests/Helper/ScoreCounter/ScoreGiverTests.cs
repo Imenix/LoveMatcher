@@ -14,6 +14,8 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [TestMethod()]
         public void AgeDifference_ScoreTest_ZeroDiff()
         {
+            TotalScore.Total = 50;
+
             var age1 = 35;
             var age2 = 35;
 
@@ -28,6 +30,8 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [TestMethod()]
         public void AgeDifference_ScoreTest_DiffBetween_0And9()
         {
+            TotalScore.Total = 50;
+
             var age1 = 88;
             var age2 = 92;
 
@@ -42,6 +46,8 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [TestMethod()]
         public void AgeDifference_ScoreTest_DiffBetween_10And19()
         {
+            TotalScore.Total = 50;
+
             var age1 = 18;
             var age2 = 37;
 
@@ -56,6 +62,8 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [TestMethod()]
         public void AgeDifference_ScoreTest_Diff_Over20()
         {
+            TotalScore.Total = 50;
+
             var age1 = 20;
             var age2 = 60;
 
@@ -72,6 +80,8 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [DataRow(15, 17)]
         public void IsOver17_ScoreTest_BothTrueOrFalse(int age1, int age2)
         {
+            TotalScore.Total = 50;
+
             ScoreGiver test = new();
             var actual = test.IsOver17_Score(age1, age2);
 
@@ -85,6 +95,8 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [DataRow(59, 77)]
         public void AgeIsEvenNumber_ScoreTest(int age1, int age2)
         {
+            TotalScore.Total = 50;
+
             ScoreGiver test = new();
             var actual = test.AgeIsEvenNumber_Score(age1, age2);
 
@@ -112,6 +124,8 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [DataRow("Jo", "Adamsonslongesstname", 65)]
         public void LengthDiffrenceName_Succesful(string name1, string name2, int expected)
         {
+            TotalScore.Total = 50;
+
             ScoreGiver test = new();
             var actual = test.LengthNameDiffrence_Score(name1, name2);
 
@@ -123,6 +137,9 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [DataRow("Jon","Adam", 55)]
         public void LengthIsEven_ScoreTest_TrueAndFalse(string name1, string name2, int expected)
         {
+
+            TotalScore.Total = 50;
+
             ScoreGiver test = new();
             var actual = test.LengthIsEven_Score(name1, name2);
 
@@ -135,6 +152,8 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [DataRow("Jo", "Di", 45)]
         public void NumberOfVowels_Score_Test_Successful(string name1, string name2, int expected)
         {
+            TotalScore.Total = 50;
+
             ScoreGiver test = new();
             var actual = test.NumberOfVowels_Score(name1, name2);
 
@@ -146,6 +165,8 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [DataRow("Go", "Wi", 45)]
         public void NumberOfConsonants_Score_Test_Successful(string name1, string name2, int expected)
         {
+            TotalScore.Total = 50;
+
             ScoreGiver test = new();
             var actual = test.NumberOfVowels_Score(name1, name2);
 
@@ -157,6 +178,8 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [DataRow("Helmut", "Anna", 45)]
         public void NumberOfSameLetters_Score_Test_Successful(string name1, string name2, int expected)
         {
+            TotalScore.Total = 50;
+
             ScoreGiver sut = new();
             var actual = sut.NumberOfSameLetters_Score(name1, name2);
 
@@ -170,6 +193,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [DataRow(10, 45)]
         public void MonthEvenNumberScoreTest(int diff, int expected)
         {
+            TotalScore.Total = 50;
             ScoreGiver score = new();
 
             var result = score.CompareMonthScore(diff);
@@ -182,6 +206,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [DataRow(25, 45)]
         public void DayEvenNumberScoreTest(int diff, int expected)
         {
+            TotalScore.Total = 50;
             ScoreGiver score = new();
 
             var result = score.CompareDayScore(diff);
@@ -195,6 +220,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [DataRow(false, true, 45)]
         public void MonthEvenNumberScore(bool person1, bool person2, int expected)
         {
+            TotalScore.Total = 50;
             ScoreGiver test = new();
 
             var result = test.MonthEvenNumberScore(person1, person2);
@@ -208,6 +234,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [DataRow(false, true, 45)]
         public void DayEvenNumberScore(bool person1, bool person2, int expected)
         {
+            TotalScore.Total = 50;
             ScoreGiver test = new();
 
             var result = test.DayEvenNumberScore(person1, person2);
@@ -217,10 +244,12 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [TestMethod()]
         [DataRow("Aries", "Libra", 60)]
         [DataRow("Libra", "Aries", 60)]
-        [DataRow("Virgo", "", 60)]
-        [DataRow()]
+        [DataRow("Virgo", "Pisces", 60)]
+        [DataRow("Pisces", "Virgo", 60)]
+        [DataRow("Leo", "Taurus", 50)]
         public void GetZodiacSignScoreTest(string zodiac1, string zodiac2, int expected)
         {
+            TotalScore.Total = 50;
             ScoreGiver score = new();
 
             var result = score.GetZodiacSignScore(zodiac1, zodiac2);
