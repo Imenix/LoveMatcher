@@ -8,8 +8,8 @@ namespace LoveMatcher
         /// <param name="date1">The date1.</param>
         /// <param name="date2">The date2.</param>
         /// <returns>Difference in months.</returns>
-        public int CompareMonth(DateTime date1, DateTime date2) //borde heta MonthDifference kanske? Precis som AgeDifference
-        {
+        public int CompareMonth(DateTime date1, DateTime date2)
+        { 
             if (date1.Month < date2.Month) return date2.Month - date1.Month;
             else return date1.Month - date2.Month;
         }
@@ -19,7 +19,7 @@ namespace LoveMatcher
         /// <param name="date1">The date1.</param>
         /// <param name="date2">The date2.</param>
         /// <returns>Difference in days.</returns>
-        public int CompareDay(DateTime date1, DateTime date2) //borde heta DayDifference kanske? Precis som AgeDifference
+        public int CompareDay(DateTime date1, DateTime date2)
         {
             if (date1.Day < date2.Day) return date2.Day - date1.Day;
             else return date1.Day - date2.Day;
