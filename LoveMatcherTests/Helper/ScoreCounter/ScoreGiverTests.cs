@@ -11,6 +11,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
     [TestClass()]
     public class ScoreGiverTests
     {
+        #region AgeScoreTests
         [TestMethod()]
         public void AgeDifference_ScoreTest_ZeroDiff()
         {
@@ -120,6 +121,9 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
 
             Assert.AreEqual(expected, actual);
         }
+        #endregion
+
+        #region NameScoreTests
         [TestMethod()]
         [DataRow("Hugh", "Adam", 50)]
         [DataRow("Rockson", "John", 55)]
@@ -187,7 +191,9 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
 
             Assert.AreEqual(expected, actual);
         }
+        #endregion
 
+        #region BirthdayScoreTests
         [TestMethod()]
         [DataRow(5, 50)]
         [DataRow(2, 60)]
@@ -257,5 +263,6 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
 
             Assert.AreEqual(expected, result);
         }
+        #endregion
     }
 }
