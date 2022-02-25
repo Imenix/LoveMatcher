@@ -14,6 +14,8 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [TestMethod()]
         public void GivePersonScoreTest()
         {
+            TotalScore.Total = 50;
+
             // Person 1 -----------------------------------------
             Person person1 = new();
             person1.Name = "Angelina";
@@ -44,6 +46,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [TestMethod()]
         public void GivePersonScoreTest_MaximumPoints()
         {
+            TotalScore.Total = 50;
             // Person 1 -----------------------------------------
             Person person1 = new();
             person1.Name = "Loisef";
