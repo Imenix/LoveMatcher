@@ -1,5 +1,4 @@
 using System.Globalization;
-
 public static class Converting
 {
     /// <summary> Converts string to int[] by converting char to numeric value </summary>
