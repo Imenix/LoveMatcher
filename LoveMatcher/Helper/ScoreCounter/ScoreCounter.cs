@@ -39,11 +39,11 @@ namespace LoveMatcher.Helper.ScoreCounter
         /// <param name="name2">The name of the second person.</param>
         public void NameScore(string name1, string name2)
         {
-            add.LengthName_Score(name1, name2);
+            add.LengthNameDiffrence_Score(name1, name2);
             add.LengthIsEven_Score(name1, name2);
-            //add.NumberOfVowels_Score(name1, name2);
-            //add.NumberOfConsonants_Score(name1, name2);
-            //add.NumberOfSameLetters_Score(name1, name2);
+            add.NumberOfVowels_Score(name1, name2);
+            add.NumberOfConsonants_Score(name1, name2);
+            add.NumberOfSameLetters_Score(name1, name2);
         }
 
         /// <summary>
@@ -55,12 +55,13 @@ namespace LoveMatcher.Helper.ScoreCounter
         {
             CompareBirthday comp = new();
 
+
             var diff = comp.CompareMonth(bd1, bd2);
             add.CompareMonthScore(diff);
             add.CompareDayScore(diff);
-            //add.MonthEvenNumberScore();
-            //add.DayEvenNumberScore();
-            //add.GetZodiacSignScore();
+            add.MonthEvenNumberScore();
+            add.DayEvenNumberScore();
+            add.GetZodiacSignScore();
         }
 
         /// <summary>
