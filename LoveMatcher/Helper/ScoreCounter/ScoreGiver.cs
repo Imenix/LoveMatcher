@@ -6,6 +6,7 @@
         CompareName cn = new();
         TotalScore totalScore = new();
 
+        #region AgeScore
         /// <summary>
         /// Checks difference in age and gives or takes points accordingly
         /// </summary>
@@ -68,7 +69,9 @@
                 return totalScore.SubstractFromTotal(5);
             }
         }
+        #endregion
 
+        #region NameScore
         /// <summary>
         /// Length the name score.
         /// </summary>
@@ -181,6 +184,9 @@
             }
             else return totalScore.SubstractFromTotal(5);
         }
+        #endregion
+
+        #region BirthdayScore
         /// <summary>
         /// Compares difference in months score.
         /// </summary>
@@ -241,5 +247,6 @@
             else if (sign == "Gemini" || sign == "Libra" || sign == "Aquarius") return "Air";
             else return "Water";
         }
+        #endregion
     }
 }
