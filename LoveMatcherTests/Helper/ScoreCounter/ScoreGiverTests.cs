@@ -185,7 +185,6 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
             ScoreGiver sut = new();
             var actual = sut.NumberOfSameLetters_Score(name1, name2);
 
-
             Assert.AreEqual(expected, actual);
         }
 
