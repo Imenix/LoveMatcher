@@ -1,4 +1,4 @@
-﻿namespace LoveMatcher.Helper.ScoreCounter
+﻿namespace LoveMatcher
 {
     public class ScoreGiver
     {
