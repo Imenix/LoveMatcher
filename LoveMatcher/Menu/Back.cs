@@ -78,7 +78,7 @@ namespace LoveMatcher
             person2.Birthday = Converting.ToExactDateTime(age2);
             #endregion
 
-            ScoreCounter sc = new();
+            ScoreCount sc = new();
             sc.GivePersonScore(person1, person2);// <-- här ska allt slängas in o jämföras.
 
             result = TotalScore.Total; // resultatet får värdet efter alla tester
