@@ -72,7 +72,6 @@ namespace Tests
             Assert.IsTrue(InputCheck.CheckAge(birth));
         }
         [TestMethod()]
-        [DataRow(-100)]
         [DataRow(-101)]
         [DataRow(1)]
         [DataRow(0)]
