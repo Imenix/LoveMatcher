@@ -21,7 +21,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
             TotalScore test = new();
             var actual = test.AddToTotal(newScore);
 
-            const int expected = 65;
+            const int expected = 60;
 
             Assert.AreEqual(expected, actual);
         }
@@ -35,7 +35,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
             TotalScore test = new();
             var actual = test.SubstractFromTotal(minusScore);
 
-            const int expected = 85;
+            const int expected = 40;
 
             Assert.AreEqual(expected, actual);
         }
@@ -44,7 +44,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         public void SubstractFromTotalTest_ScoreNotUnderZero()
         {
             TotalScore.Total = 50;
-            const int minusScore = 20;
+            const int minusScore = 60;
 
             TotalScore test = new();
             var actual = test.SubstractFromTotal(minusScore);
