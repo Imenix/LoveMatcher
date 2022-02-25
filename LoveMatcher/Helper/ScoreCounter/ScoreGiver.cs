@@ -12,6 +12,7 @@ namespace LoveMatcher.Helper.ScoreCounter
         CompareName cn = new();
         TotalScore totalScore = new();
 
+        #region AgeScore
         /// <summary>
         /// Checks difference in age and gives or takes points accordingly
         /// </summary>
@@ -74,7 +75,9 @@ namespace LoveMatcher.Helper.ScoreCounter
                 return totalScore.SubstractFromTotal(5);
             }
         }
+        #endregion
 
+        #region NameScore
         /// <summary>
         /// Length the name score.
         /// </summary>
@@ -187,6 +190,9 @@ namespace LoveMatcher.Helper.ScoreCounter
             }
             else return totalScore.SubstractFromTotal(5);
         }
+        #endregion
+
+        #region BirthdayScore
         /// <summary>
         /// Compares difference in months score.
         /// </summary>
@@ -247,5 +253,6 @@ namespace LoveMatcher.Helper.ScoreCounter
             else if (element == "Gemini" || element == "Libra" || element == "Aquarius") return element = "Air";
             else return element = "Water";
         }
+        #endregion
     }
 }
