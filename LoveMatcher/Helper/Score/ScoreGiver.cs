@@ -47,7 +47,7 @@
             var count = cn.NumberOfVowels(person1);
             count += cn.NumberOfVowels(person2);
 
-            if(count >= 10) return totalScore.AddToTotal(10);
+            if (count >= 10) return totalScore.AddToTotal(10);
             else if (count >= 5) return totalScore.AddToTotal(5);
             else return totalScore.SubstractFromTotal(5);
         }

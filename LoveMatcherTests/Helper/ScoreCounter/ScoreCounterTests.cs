@@ -35,7 +35,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
 
             // ---------------------------------------------------
 
-            ScoreCounter counter = new();
+            ScoreCount counter = new();
             counter.GivePersonScore(person1, person2);
 
             var actual = TotalScore.Total;
@@ -66,7 +66,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
 
             // ---------------------------------------------------
 
-            ScoreCounter counter = new();
+            ScoreCount counter = new();
             counter.GivePersonScore(person1, person2);
 
             var actual = TotalScore.Total;
