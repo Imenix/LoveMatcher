@@ -233,13 +233,13 @@
         /// <summary>
         /// Gets the zodiac element.
         /// </summary>
-        /// <param name="element">The element.</param>
-        private string GetZodiacElement(string element)
+        /// <param name="sign">The zodiac sign.</param>
+        private string GetZodiacElement(string sign)
         {
-            if (element == "Aries" || element == "Leo" || element == "Saggitarius") return element = "Fire";
-            else if (element == "Taurus" || element == "Virgo" || element == "Capricorn") return element = "Earth";
-            else if (element == "Gemini" || element == "Libra" || element == "Aquarius") return element = "Air";
-            else return element = "Water";
+            if (sign == "Aries" || sign == "Leo" || sign == "Saggitarius") return "Fire";
+            else if (sign == "Taurus" || sign == "Virgo" || sign == "Capricorn") return "Earth";
+            else if (sign == "Gemini" || sign == "Libra" || sign == "Aquarius") return "Air";
+            else return "Water";
         }
     }
 }
