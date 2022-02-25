@@ -23,7 +23,4 @@ public class Person
         }
     }
     private int age;
-    /// <summary> Persons gender </summary>
-    /// <value> The gender </value>
-    public string Gender { get; set; }
 }

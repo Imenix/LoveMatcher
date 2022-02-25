@@ -16,14 +16,14 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         {
             TotalScore.Total = 50;
 
-            var oldScore = 5;
-            var newScore = 10;
+            const int oldScore = 5;
+            const int newScore = 10;
 
             TotalScore test = new();
             test.AddToTotal(oldScore);
             var actual = test.AddToTotal(newScore);
 
-            var expected = 65;
+            const int expected = 65;
 
             Assert.AreEqual(expected, actual);
         }
@@ -32,14 +32,14 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         public void SubstractFromTotalTest()
         {
             TotalScore.Total = 50;
-            var oldScore = 45;
-            var minusScore = 10;
+            const int oldScore = 45;
+            const int minusScore = 10;
 
             TotalScore test = new();
             test.AddToTotal(oldScore);
             var actual = test.SubstractFromTotal(minusScore);
 
-            var expected = 85;
+            const int expected = 85;
 
             Assert.AreEqual(expected, actual);
         }
@@ -47,14 +47,14 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [TestMethod()]
         public void SubstractFromTotalTest_ScoreNotUnderZero()
         {
-            var oldScore = 5;
-            var minusScore = 20;
+            const int oldScore = 5;
+            const int minusScore = 20;
 
             TotalScore test = new();
             test.AddToTotal(oldScore);
             var actual = test.SubstractFromTotal(minusScore);
 
-            var expected = 0;
+            const int expected = 0;
 
             Assert.AreEqual(expected, actual);
         }
