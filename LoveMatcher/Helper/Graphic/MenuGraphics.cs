@@ -58,6 +58,7 @@
 
         Console.ForegroundColor = ConsoleColor.Red;
         for (int i = 0; i < barLength; i++)
+        {
             if (result / 2 > i) //While barLength is 50 and highest score is 100 the result has to be halved to be accurate
             {
                 Console.SetCursorPosition(pos.l, pos.t);
@@ -68,8 +69,9 @@
                 heartSprite = AnimateHeart(heartSprite);
                 Console.ForegroundColor = ConsoleColor.Red;
             }
+        }
+
         Console.ResetColor();
-        //Console.SetCursorPosition(pos.l-1, pos.t+2);
         Draw(Assets.PercentBox(result), pos.l - 3, pos.t + 2);
     }
 
@@ -77,7 +79,7 @@
     /// For use in FillBar(). Animates the heart at the same time the bar fills.
     /// </summary>
     /// <param name="heartSprite">Decides what Heart sprite should be drawn.</param>
-    /// <returns></returns>
+    /// <returns>What sprite should be used next time.</returns>
     private static int AnimateHeart(int heartSprite)
     {
         int[] pos = { 37, 3 };

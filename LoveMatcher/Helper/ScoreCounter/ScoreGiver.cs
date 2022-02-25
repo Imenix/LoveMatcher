@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LoveMatcher.Helper.ScoreCounter
+﻿namespace LoveMatcher.Helper.ScoreCounter
 {
     public class ScoreGiver
     {
@@ -18,7 +12,7 @@ namespace LoveMatcher.Helper.ScoreCounter
         /// </summary>
         /// <param name="person1">The person1.</param>
         /// <param name="person2">The person2.</param>
-        /// <returns></returns>
+        /// <returns>Score.</returns>
         public int LengthNameDiffrence_Score(string person1, string person2)
         {
             var totalDiff = cn.LengthNameDiffrence(person1, person2);
@@ -44,7 +38,7 @@ namespace LoveMatcher.Helper.ScoreCounter
         /// </summary>
         /// <param name="person1">The person1.</param>
         /// <param name="person2">The person2.</param>
-        /// <returns></returns>
+        /// <returns>Score.</returns>
         public int LengthIsEven_Score(string person1, string person2)
         {
             var isEven1 = cn.LengthIsEven(person1);
@@ -65,7 +59,7 @@ namespace LoveMatcher.Helper.ScoreCounter
         /// </summary>
         /// <param name="person1">The person1.</param>
         /// <param name="person2">The person2.</param>
-        /// <returns></returns>
+        /// <returns>Score.</returns>
         public int NumberOfVowels_Score(string person1, string person2)
         {
             var count = cn.NumberOfVowels(person1);
@@ -86,7 +80,7 @@ namespace LoveMatcher.Helper.ScoreCounter
         /// </summary>
         /// <param name="person1">The person1.</param>
         /// <param name="person2">The person2.</param>
-        /// <returns></returns>
+        /// <returns>Score.</returns>
         public int NumberOfConsonants_Score(string person1, string person2)
         {
             var count = cn.NumberOfConsonants(person1);
@@ -111,7 +105,7 @@ namespace LoveMatcher.Helper.ScoreCounter
         /// </summary>
         /// <param name="person1">The person1.</param>
         /// <param name="person2">The person2.</param>
-        /// <returns></returns>
+        /// <returns>Score.</returns>
         public int NumberOfSameLetters_Score(string person1, string person2)
         {
             var counter = cn.NumberOfSameLetters(person1, person2);
@@ -180,13 +174,13 @@ namespace LoveMatcher.Helper.ScoreCounter
         /// <summary>
         /// Gets the zodiac element.
         /// </summary>
-        /// <param name="element">The element.</param>
-        private string GetZodiacElement(string element)
+        /// <param name="sign">The zodiac sign.</param>
+        private string GetZodiacElement(string sign)
         {
-            if (element == "Aries" || element == "Leo" || element == "Saggitarius") return element = "Fire";
-            else if (element == "Taurus" || element == "Virgo" || element == "Capricorn") return element = "Earth";
-            else if (element == "Gemini" || element == "Libra" || element == "Aquarius") return element = "Air";
-            else return element = "Water";
+            if (sign == "Aries" || sign == "Leo" || sign == "Saggitarius") return "Fire";
+            else if (sign == "Taurus" || sign == "Virgo" || sign == "Capricorn") return "Earth";
+            else if (sign == "Gemini" || sign == "Libra" || sign == "Aquarius") return "Air";
+            else return "Water";
         }
         #endregion
 

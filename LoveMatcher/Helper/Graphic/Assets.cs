@@ -1,5 +1,4 @@
-﻿
-internal static class Assets
+﻿internal static class Assets
 {
     internal static string[] Heart = new string[]
     {

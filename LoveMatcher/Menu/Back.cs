@@ -1,5 +1,4 @@
 using LoveMatcher.Helper.ScoreCounter;
-
 public static class Back
 {
     public static void MainMenu()

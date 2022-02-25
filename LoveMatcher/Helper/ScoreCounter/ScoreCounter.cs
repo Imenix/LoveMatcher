@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-namespace LoveMatcher.Helper.ScoreCounter
+﻿namespace LoveMatcher.Helper.ScoreCounter
 {
     public class ScoreCounter
     {
@@ -16,7 +9,7 @@ namespace LoveMatcher.Helper.ScoreCounter
         /// </summary>
         /// <param name="person1">The first person.</param>
         /// <param name="person2">The second person.</param>
-        public void GivePersonScore(Person person1, Person person2) //plussar ihop alla tre
+        public void GivePersonScore(Person person1, Person person2)
         {
             var name1 = person1.Name;
             var bd1 = person1.Birthday;
@@ -29,7 +22,6 @@ namespace LoveMatcher.Helper.ScoreCounter
             NameScore(name1, name2);
             BirthdayScore(bd1, bd2, person1, person2);
             AgeScore(age1,age2);
-
         }
 
         /// <summary>
