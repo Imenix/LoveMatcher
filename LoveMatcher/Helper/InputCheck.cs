@@ -11,7 +11,7 @@ namespace LoveMatcher
         /// <returns>True if age is between 0 and 100. /returns>
         public static bool CheckAge(string input)
         {
-            DateTime.TryParse(input, out DateTime birthDate);
+            _ = DateTime.TryParse(input, out DateTime birthDate);
             var age = DateTime.Today.Year - birthDate.Year;
             return age > 0 && age < 101;
         }

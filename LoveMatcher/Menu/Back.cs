@@ -49,7 +49,6 @@ namespace LoveMatcher
                     Console.WriteLine("bababoey");
                     Environment.Exit(0);
                 }
-
             } while (!InputCheck.CheckLetters(name1));
 
             person1.Name = Converting.ToCleanName(name1);
