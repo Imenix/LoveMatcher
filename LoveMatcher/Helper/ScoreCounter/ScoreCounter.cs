@@ -1,6 +1,6 @@
 ﻿namespace LoveMatcher
 {
-    public class ScoreCounter
+    public class ScoreCount
     {
         ScoreGiver add = new();
 
