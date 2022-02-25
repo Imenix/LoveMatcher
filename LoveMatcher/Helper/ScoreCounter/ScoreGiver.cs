@@ -76,9 +76,12 @@
         {
             var counter = cn.NumberOfSameLetters(person1, person2);
 
-            if(counter >= 5) return totalScore.AddToTotal(10);
+            if (counter >= 5) return totalScore.AddToTotal(10);
             else if (counter >= 3) return totalScore.AddToTotal(5);
-            else { return totalScore.SubstractFromTotal(5);
+            else
+            {
+                return totalScore.SubstractFromTotal(5);
+            }
         }
         #endregion
 

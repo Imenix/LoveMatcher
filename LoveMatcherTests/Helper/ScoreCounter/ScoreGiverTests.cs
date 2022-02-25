@@ -49,13 +49,13 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         {
             TotalScore.Total = 50;
 
-            var age1 = 18;
-            var age2 = 37;
+            const int age1 = 18;
+            const int age2 = 37;
 
             ScoreGiver test = new();
             var actual = test.AgeDifference_Score(age1, age2);
 
-            var expected = 55;
+            const int expected = 55;
 
             Assert.AreEqual(expected, actual);
         }

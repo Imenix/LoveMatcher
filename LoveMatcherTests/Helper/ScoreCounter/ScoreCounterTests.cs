@@ -39,7 +39,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
             counter.GivePersonScore(person1, person2);
 
             var actual = TotalScore.Total;
-            var expected = 130;
+            const int expected = 130;
 
             Assert.AreEqual(expected, actual);
         }
@@ -70,7 +70,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
             counter.GivePersonScore(person1, person2);
 
             var actual = TotalScore.Total;
-            var expected = 190;
+            const int expected = 190;
 
             Assert.AreEqual(expected, actual);
         }
