@@ -108,6 +108,8 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [TestMethod()]
         public void AgeIsEvenNumber_ScoreTest_TrueAndFalse()
         {
+            TotalScore.Total = 50;
+
             var age1 = 25;
             var age2 = 34;
 
