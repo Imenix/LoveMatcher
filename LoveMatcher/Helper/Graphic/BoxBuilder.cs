@@ -1,5 +1,4 @@
-﻿using System;
-static class Box
+﻿static class Box
 {
     public static void ThinBorder(string[] rows, int left=0, int top=0)
     {

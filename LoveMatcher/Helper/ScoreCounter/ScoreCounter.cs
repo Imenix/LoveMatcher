@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-namespace LoveMatcher.Helper.ScoreCounter
+﻿namespace LoveMatcher.Helper.ScoreCounter
 {
     public class ScoreCounter
     {

@@ -1,5 +1,4 @@
 using System.Globalization;
-
 public static class InputCheck
 {
     /// <summary>
