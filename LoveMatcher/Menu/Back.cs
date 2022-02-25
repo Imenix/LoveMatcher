@@ -1,126 +1,128 @@
-using LoveMatcher.Helper.ScoreCounter;
-public static class Back
+namespace LoveMatcher
 {
-    public static void MainMenu()
+    public static class Back
     {
-        Assets.MainMenuText();
-        var choice = Console.ReadKey();
-        Console.Clear();
-        switch (choice.Key)
+        public static void MainMenu()
         {
-            case ConsoleKey.D1:
-                CompareMenu();
-                break;
-
-            case ConsoleKey.Escape:
-                Environment.Exit(0);
-                break;
-
-            default:
-                Console.Clear();
-                MainMenu();
-                break;
-        }
-    }
-
-    private static void CompareMenu()
-    {
-        TotalScore.Total = 50;
-        Person person1 = new();
-        Person person2 = new();
-
-        string name1;
-        string age1;
-        string name2;
-        string age2;
-        double result;
-        double percent;
-        double match;
-
-        #region Person1
-        do
-        {
-            MenuGraphics.CompareMenuGraphics();
-            name1 = Console.ReadLine();
-
-            if (!InputCheck.CheckLetters(name1))
+            Assets.MainMenuText();
+            var choice = Console.ReadKey();
+            Console.Clear();
+            switch (choice.Key)
             {
-                Console.WriteLine("bababoey");
-                Environment.Exit(0);
+                case ConsoleKey.D1:
+                    CompareMenu();
+                    break;
+
+                case ConsoleKey.Escape:
+                    Environment.Exit(0);
+                    break;
+
+                default:
+                    Console.Clear();
+                    MainMenu();
+                    break;
             }
+        }
 
-        } while (!InputCheck.CheckLetters(name1));
-
-        person1.Name = Converting.ToCleanName(name1);
-
-        do
+        private static void CompareMenu()
         {
-            Console.Clear();
-            MenuGraphics.CompareMenuGraphics(name1);
-            age1 = Console.ReadLine();
+            TotalScore.Total = 50;
+            Person person1 = new();
+            Person person2 = new();
 
-        } while (!InputCheck.CheckDateTimeFormat(age1) || !InputCheck.CheckAge(age1));
+            string name1;
+            string age1;
+            string name2;
+            string age2;
+            double result;
+            double percent;
+            double match;
 
-        person1.Birthday = Converting.ToExactDateTime(age1);
-        #endregion
+            #region Person1
+            do
+            {
+                MenuGraphics.CompareMenuGraphics();
+                name1 = Console.ReadLine();
 
-        #region Person2
-        do
-        {
-            Console.Clear();
-            MenuGraphics.CompareMenuGraphics(name1, age1);
-            name2 = Console.ReadLine();
-        } while (!InputCheck.CheckLetters(name2));
+                if (!InputCheck.CheckLetters(name1))
+                {
+                    Console.WriteLine("bababoey");
+                    Environment.Exit(0);
+                }
 
-        person2.Name = Converting.ToCleanName(name2);
+            } while (!InputCheck.CheckLetters(name1));
 
-        do
-        {
-            Console.Clear();
-            MenuGraphics.CompareMenuGraphics(name1, age1, name2);
-            age2 = Console.ReadLine();
-        } while (!InputCheck.CheckDateTimeFormat(age2) || !InputCheck.CheckAge(age2));
+            person1.Name = Converting.ToCleanName(name1);
 
-        person2.Birthday = Converting.ToExactDateTime(age2);
-        #endregion
-
-        ScoreCounter sc = new();
-        sc.GivePersonScore(person1, person2);// <-- här ska allt slängas in o jämföras.
-
-        result = TotalScore.Total; // resultatet får värdet efter alla tester
-        percent = result / 180;
-        match = percent * 100;
-        double match2 = (double)Math.Round(match, 0);
-
-        Console.Clear();
-        MenuGraphics.CompareMenuGraphics(name1, age1, name2, age2);
-        MenuGraphics.FillBar(match2, 50, 17, 9);
-        MenuGraphics.HeartBasedOnResult(match2);
-        Console.ReadKey();
-        Console.Clear();
-
-        CompareAgainMenu();
-    }
-
-    public static void CompareAgainMenu()
-    {
-        Console.SetCursorPosition(0, 0);
-        Assets.CompareAgainText();
-        var choice = Console.ReadKey();
-        switch (choice.Key)
-        {
-            case ConsoleKey.D1:
+            do
+            {
                 Console.Clear();
-                CompareMenu();
-                break;
+                MenuGraphics.CompareMenuGraphics(name1);
+                age1 = Console.ReadLine();
 
-            case ConsoleKey.Escape:
-                Environment.Exit(0);
-                break;
+            } while (!InputCheck.CheckDateTimeFormat(age1) || !InputCheck.CheckAge(age1));
 
-            default:
-                CompareAgainMenu();
-                break;
+            person1.Birthday = Converting.ToExactDateTime(age1);
+            #endregion
+
+            #region Person2
+            do
+            {
+                Console.Clear();
+                MenuGraphics.CompareMenuGraphics(name1, age1);
+                name2 = Console.ReadLine();
+            } while (!InputCheck.CheckLetters(name2));
+
+            person2.Name = Converting.ToCleanName(name2);
+
+            do
+            {
+                Console.Clear();
+                MenuGraphics.CompareMenuGraphics(name1, age1, name2);
+                age2 = Console.ReadLine();
+            } while (!InputCheck.CheckDateTimeFormat(age2) || !InputCheck.CheckAge(age2));
+
+            person2.Birthday = Converting.ToExactDateTime(age2);
+            #endregion
+
+            ScoreCounter sc = new();
+            sc.GivePersonScore(person1, person2);// <-- här ska allt slängas in o jämföras.
+
+            result = TotalScore.Total; // resultatet får värdet efter alla tester
+            percent = result / 180;
+            match = percent * 100;
+            double match2 = (double)Math.Round(match, 0);
+
+            Console.Clear();
+            MenuGraphics.CompareMenuGraphics(name1, age1, name2, age2);
+            MenuGraphics.FillBar(match2, 50, 17, 9);
+            MenuGraphics.HeartBasedOnResult(match2);
+            Console.ReadKey();
+            Console.Clear();
+
+            CompareAgainMenu();
+        }
+
+        public static void CompareAgainMenu()
+        {
+            Console.SetCursorPosition(0, 0);
+            Assets.CompareAgainText();
+            var choice = Console.ReadKey();
+            switch (choice.Key)
+            {
+                case ConsoleKey.D1:
+                    Console.Clear();
+                    CompareMenu();
+                    break;
+
+                case ConsoleKey.Escape:
+                    Environment.Exit(0);
+                    break;
+
+                default:
+                    CompareAgainMenu();
+                    break;
+            }
         }
     }
 }
