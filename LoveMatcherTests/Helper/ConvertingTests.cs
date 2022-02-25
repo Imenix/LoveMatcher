@@ -22,7 +22,7 @@ namespace Tests
         [DataRow("2002-04-10")]
         public void ToExactDateTimeTest(string date)
         {
-            DateTime expected = new DateTime(2002,04,10);
+            DateTime expected = new(2002,04,10);
             Assert.AreEqual(expected, Converting.ToExactDateTime(date));
         }
     }

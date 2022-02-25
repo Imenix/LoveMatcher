@@ -43,7 +43,6 @@ namespace LoveMatcher
             {
                 MenuGraphics.CompareMenuGraphics();
                 name1 = Console.ReadLine();
-
             } while (!InputCheck.CheckLetters(name1));
 
             person1.Name = Converting.ToCleanName(name1);
