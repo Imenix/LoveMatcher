@@ -16,7 +16,6 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         {
             TotalScore.Total = 50;
 
-            const int oldScore = 5;
             const int newScore = 10;
 
             TotalScore test = new();
@@ -31,7 +30,6 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         public void SubstractFromTotalTest()
         {
             TotalScore.Total = 50;
-            const int oldScore = 45;
             const int minusScore = 10;
 
             TotalScore test = new();
@@ -45,7 +43,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         [TestMethod()]
         public void SubstractFromTotalTest_ScoreNotUnderZero()
         {
-            const int oldScore = 5;
+            TotalScore.Total = 50;
             const int minusScore = 20;
 
             TotalScore test = new();

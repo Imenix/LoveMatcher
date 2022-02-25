@@ -50,7 +50,6 @@
             if(count >= 10) return totalScore.AddToTotal(10);
             else if (count >= 5) return totalScore.AddToTotal(5);
             else return totalScore.SubstractFromTotal(5);
-
         }
         /// <summary>
         /// Numbers the of consonants score.
@@ -79,7 +78,7 @@
 
             if(counter >= 5) return totalScore.AddToTotal(10);
             else if (counter >= 3) return totalScore.AddToTotal(5);
-            else { return totalScore.SubstractFromTotal(5); };
+            else { return totalScore.SubstractFromTotal(5);
         }
         #endregion
 

@@ -73,6 +73,5 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
 
             Assert.AreEqual(expected, actual);
         }
-
     }
 }
