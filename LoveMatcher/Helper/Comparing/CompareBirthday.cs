@@ -115,6 +115,6 @@ public class CompareBirthday
         if (startNum > endNum)
             endNum += 366;
 
-        return (dateNum >= startNum && dateNum <= endNum);
+        return dateNum >= startNum && dateNum <= endNum;
     }
 }
