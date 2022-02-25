@@ -36,56 +36,40 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
             counter.GivePersonScore(person1, person2);
 
             var actual = TotalScore.Total;
-            var expected = 75;
+            var expected = 130;
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod()]
-        public void NameScoreTest()
+        public void GivePersonScoreTest_MaximumPoints()
         {
-            string name1 = "Angelina";
-            string name2 = "Brad";
+            // Person 1 -----------------------------------------
+            Person person1 = new();
+            person1.Name = "Loisef";
 
-            ScoreCounter test = new();
-            test.NameScore(name1, name2);
+            var date1 = new DateTime(1990, 06, 04);
+            person1.Birthday = date1;
+            person1.Age = 32;
+
+            // Person 2 -----------------------------------------
+            Person person2 = new();
+            person2.Name = "Lollaaejfiefiaejfi";
+
+            var date2 = new DateTime(1990, 08, 06);
+            person2.Birthday = date2;
+            person2.Age = 32;
+
+            // ---------------------------------------------------
+
+            ScoreCounter counter = new();
+            counter.GivePersonScore(person1, person2);
 
             var actual = TotalScore.Total;
-
-            var expected = 0;
+            var expected = 190;
 
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod()]
-        public void BirthdayScoreTest()
-        {
-            var date1 = new DateTime(1975, 06, 04);
-            var date2 = new DateTime(1963, 12, 18);
-
-            ScoreCounter test = new();
-            test.BirthdayScore(date1, date2);
-
-            var actual = TotalScore.Total;
-
-            var expected = 0;
-
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod()]
-        public void AgeScoreTest2()
-        {
-            int age1 = 46;
-            int age2 = 58;
-
-            ScoreCounter test = new();
-            test.AgeScore(age1, age2);
-
-            var actual = TotalScore.Total;
-            var expected = 75;
-
-            Assert.AreEqual(expected, actual);
-        }
     }
 }

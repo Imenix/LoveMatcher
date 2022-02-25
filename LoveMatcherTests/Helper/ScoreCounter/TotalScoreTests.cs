@@ -48,7 +48,7 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
         public void SubstractFromTotalTest_ScoreNotUnderZero()
         {
             var oldScore = 5;
-            var minusScore = 20;
+            var minusScore = 60;
 
             TotalScore test = new();
             test.AddToTotal(oldScore);
