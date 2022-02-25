@@ -20,7 +20,6 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
             const int newScore = 10;
 
             TotalScore test = new();
-            test.AddToTotal(oldScore);
             var actual = test.AddToTotal(newScore);
 
             const int expected = 65;
@@ -36,7 +35,6 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
             const int minusScore = 10;
 
             TotalScore test = new();
-            test.AddToTotal(oldScore);
             var actual = test.SubstractFromTotal(minusScore);
 
             const int expected = 85;
@@ -51,7 +49,6 @@ namespace LoveMatcher.Helper.ScoreCounter.Tests
             const int minusScore = 20;
 
             TotalScore test = new();
-            test.AddToTotal(oldScore);
             var actual = test.SubstractFromTotal(minusScore);
 
             const int expected = 0;

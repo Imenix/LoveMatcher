@@ -17,7 +17,7 @@ namespace Tests
             var test = new CompareBirthday();
             var date = new DateTime(1995, 2, 13);
             var date2 = new DateTime(1995, 6, 29);
-            int expected = 4;
+            const int expected = 4;
             var result = test.CompareMonth(date, date2);
 
             Assert.AreEqual(expected, result);
@@ -28,7 +28,7 @@ namespace Tests
             var test = new CompareBirthday();
             var date = new DateTime(1995, 2, 13);
             var date2 = new DateTime(1995, 6, 29);
-            int expected = 4;
+            const int expected = 4;
             var result = test.CompareMonth(date2, date);
 
             Assert.AreEqual(expected, result);
@@ -40,7 +40,7 @@ namespace Tests
             var test = new CompareBirthday();
             var date = new DateTime(1995, 2, 13);
             var date2 = new DateTime(1995, 6, 29);
-            int expected = 16;
+            const int expected = 16;
             var result = test.CompareDay(date, date2);
 
             Assert.AreEqual(expected, result);
@@ -52,7 +52,7 @@ namespace Tests
             var test = new CompareBirthday();
             var date = new DateTime(1995, 2, 13);
             var date2 = new DateTime(1995, 6, 29);
-            int expected = 16;
+            const int expected = 16;
             var result = test.CompareDay(date2, date);
 
             Assert.AreEqual(expected, result);
@@ -87,7 +87,7 @@ namespace Tests
             var person = new Person();
             var date = new DateTime(1990, 1, 29);
             person.Birthday = date;
-            var expected = "Aquarius";
+            const string expected = "Aquarius";
             var result = test.GetAstroSign(person);
 
             Assert.AreEqual(expected, result);

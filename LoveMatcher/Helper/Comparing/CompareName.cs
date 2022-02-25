@@ -1,13 +1,14 @@
-
+namespace LoveMatcher
+{
     public class CompareName
     {
         /// <summary>
         /// Calculates the difference between lenght of the names
         /// </summary>
-        public int LengthNameDiffrence(string name1, string name2) // Ändra till skillnaden i längd
+        public int LengthNameDiffrence(string name1, string name2)
         {
             if (name1.Length > name2.Length) return name1.Length - name2.Length;
-            else return  name2.Length - name1.Length;
+            else return name2.Length - name1.Length;
         }
 
         /// <summary>
@@ -17,8 +18,7 @@
         public bool LengthIsEven(string name)
         {
             var nameLength = name.Length;
-            if (nameLength % 2 == 0) return true;
-            else return false;
+            return nameLength % 2 == 0;
         }
 
         /// <summary>
@@ -27,7 +27,7 @@
         /// <returns>The amount of vowels.</returns>
         public int NumberOfVowels(string name)
         {
-            var vowels = new char[] { 'a', 'e', 'i', 'o', 'u','å','ä','ö' };
+            var vowels = new char[] { 'a', 'e', 'i', 'o', 'u', 'å', 'ä', 'ö' };
             int vowelSum = name.ToLower().Count(c => vowels.Contains(c));
             return vowelSum;
         }
@@ -38,7 +38,7 @@
         /// <returns>The amount of consonants.</returns>
         public int NumberOfConsonants(string name)
         {
-            var consonants = new char[] { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'};
+            var consonants = new char[] { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z' };
             int consonantSum = name.ToLower().Count(c => consonants.Contains(c));
             return consonantSum;
         }
@@ -55,3 +55,4 @@
             return point;
         }
     }
+}
