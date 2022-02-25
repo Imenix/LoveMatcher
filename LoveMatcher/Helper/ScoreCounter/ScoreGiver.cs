@@ -11,7 +11,7 @@
         /// </summary>
         /// <param name="age1">Age of the first person.</param>
         /// <param name="age2">Age of the second person.</param>
-        /// <returns></returns>
+        /// <returns>Score.</returns>
         public int AgeDifference_Score(int age1, int age2)
         {
             var diff = compare.AgeDifference(age1,age2);
@@ -28,9 +28,9 @@
         /// <summary>
         /// Determines whether both persons' age is at least 18 and gives points accordingly.
         /// </summary>
-        /// <param name="person1">The first person.</param>
-        /// <param name="person2">The second person.</param>
-        /// <returns></returns>
+        /// <param name="age1">The first age.</param>
+        /// <param name="age2">The second age.</param>
+        /// <returns>Score.</returns>
         public int IsOver17_Score(int age1, int age2)
         {
             var oldEnough1 = compare.IsOver17(age1);
@@ -41,9 +41,9 @@
         /// <summary>
         /// Determines whether both persons' age is even or odd and gives points accordingly.
         /// </summary>
-        /// <param name="person1">The first person.</param>
-        /// <param name="person2">The second person.</param>
-        /// <returns></returns>
+        /// <param name="age1">The first person.</param>
+        /// <param name="age2">The second person.</param>
+        /// <returns>Score.</returns>
         public int AgeIsEvenNumber_Score(int age1, int age2)
         {
             var even1 = compare.AgeIsEvenNumber(age1);
@@ -56,7 +56,7 @@
         /// </summary>
         /// <param name="age1">if set to <c>true</c> [age1].</param>
         /// <param name="age2">if set to <c>true</c> [age2].</param>
-        /// <returns></returns>
+        /// <returns>Score.</returns>
         private int GiveScore(bool age1, bool age2)
         {
             if ((age1 && age2) || (!age1 && !age2))
@@ -74,7 +74,7 @@
         /// </summary>
         /// <param name="person1">The person1.</param>
         /// <param name="person2">The person2.</param>
-        /// <returns></returns>
+        /// <returns>Score.</returns>
         public int LengthNameDiffrence_Score(string person1, string person2)
         {
             var totalDiff = cn.LengthNameDiffrence(person1, person2);
@@ -100,7 +100,7 @@
         /// </summary>
         /// <param name="person1">The person1.</param>
         /// <param name="person2">The person2.</param>
-        /// <returns></returns>
+        /// <returns>Score.</returns>
         public int LengthIsEven_Score(string person1, string person2)
         {
             var isEven1 = cn.LengthIsEven(person1);
@@ -121,7 +121,7 @@
         /// </summary>
         /// <param name="person1">The person1.</param>
         /// <param name="person2">The person2.</param>
-        /// <returns></returns>
+        /// <returns>Score.</returns>
         public int NumberOfVowels_Score(string person1, string person2)
         {
             var count = cn.NumberOfVowels(person1);
@@ -142,7 +142,7 @@
         /// </summary>
         /// <param name="person1">The person1.</param>
         /// <param name="person2">The person2.</param>
-        /// <returns></returns>
+        /// <returns>Score.</returns>
         public int NumberOfConsonants_Score(string person1, string person2)
         {
             var count = cn.NumberOfConsonants(person1);
@@ -167,7 +167,7 @@
         /// </summary>
         /// <param name="person1">The person1.</param>
         /// <param name="person2">The person2.</param>
-        /// <returns></returns>
+        /// <returns>Score.</returns>
         public int NumberOfSameLetters_Score(string person1, string person2)
         {
             var counter = cn.NumberOfSameLetters(person1, person2);

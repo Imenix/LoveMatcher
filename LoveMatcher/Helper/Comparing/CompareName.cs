@@ -16,8 +16,7 @@ public class CompareName
     public bool LengthIsEven(string name)
     {
         var nameLength = name.Length;
-        if (nameLength % 2 == 0) return true;
-        else return false;
+        return nameLength % 2 == 0;
     }
 
     /// <summary>

@@ -12,6 +12,7 @@
         }
         Console.WriteLine("──┐");
         top++;
+
         foreach (var line in rows)
         {
             Console.SetCursorPosition(left, top);

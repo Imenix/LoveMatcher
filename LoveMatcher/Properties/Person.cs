@@ -2,7 +2,7 @@ public class Person
 {
     /// <summary> Name of person </summary>
     /// <value> The name. </value>
-    public string Name { get; set; }
+    public string Name { get; set; } = "";
     /// <summary> Persons birthday </summary>
     /// <value> The birthday. </value>
     public DateTime Birthday { get; set; }
